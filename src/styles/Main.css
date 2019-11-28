@@ -13,30 +13,14 @@
   color: slategray;
 }
 
-.main-overview {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
-  grid-auto-rows: 94px;
-  grid-gap: 20px;
-  margin: 20px;
-}
-
-.overviewcard {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px;
-  background-color: #d3d3;
-}
-
-.main-cards {
+.main-articles {
   column-count: 1;
   column-gap: 20px;
   margin: 20px;
 }
 
 /* Force varying heights to simulate dynamic content */
-.card:first-child {
+/* .card:first-child {
   height: 485px;
 }
 
@@ -46,12 +30,12 @@
 
 .card:nth-child(3) {
   height: 265px;
-}
+} */
 
 /* Medium screens breakpoint (1050px) */
 @media only screen and (min-width: 65.625em) {
   /* Break out main cards into two columns */
-  .main-cards {
+  .main-articles {
     column-count: 2;
   }
 }
