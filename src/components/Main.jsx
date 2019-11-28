@@ -8,22 +8,30 @@ import '../styles/Main.css'
 
 function Main(props) {
   console.log(props.articlesArr)
-  return (
-    <main className="main">
+
+  const allArticles = (
+    <React.Fragment>
       <div className="main-header">
         <div className="main-header__heading">Hello User</div>
         <div className="main-header__updates">Recent Items</div>
       </div>
       <MainOverview />
-
-      {props.selectedArticle === null ? <div className="main-articles">
+      <div className="main-articles">
         {props.articlesArr.map(article => (
           <Article key={article.uuid} article={article} onSelect={props.onSelect} />
         ))}
-      </div> : <ArticleContent selectedArticle={props.selectedArticle} deSelect={props.deSelect} />}
+      </div>
+    </React.Fragment>
+  );
 
+  const selectedArticle = <ArticleContent selectedArticle={props.selectedArticle} deSelect={props.deSelect} />
 
-    </main>
+  return (
+
+    <main className="main">
+      {props.selectedArticle === null ? allArticles : selectedArticle}
+
+    </main >
   )
 }
 

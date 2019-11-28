@@ -5,18 +5,19 @@ import Header from './components/Header'
 import Sidenav from './components/Sidenav'
 import Main from './components/Main'
 import Footer from './components/Footer'
+import randomText from './data/randomText'
 // import data from './data/data';
 import './App.css';
 
 function App() {
   const [articlesArr, setArticlesArr] = useState([]);
   const [selectedArticle, setSelectedArticle] = useState(null);
-
+  
   useEffect(() => {
     const getHeadlines = async () => {
       const APIKey = '1f9659798f1841bb962c9bc56cc559a2'
       // const categ = category !== undefined ? '&category=' + category : '';
-      const url = `https://newsapi.org/v2/top-headlines?country=us`;
+      const url = `https://newsapi.org/v2/top-headlines?country=hu`;
       const headers = { "X-Api-Key": APIKey };
 
       try {
@@ -25,9 +26,8 @@ function App() {
         let dataWithKeys = [];
 
         data.articles.forEach(article => {
-          dataWithKeys.push({ ...article, uuid: uuid() })
+          dataWithKeys.push({ ...article, uuid: uuid(), dummyText: randomText.randomText })
         })
-        // console.log(indexedData)
 
         setArticlesArr(dataWithKeys)
       } catch (err) { console.log(err) }
@@ -35,7 +35,7 @@ function App() {
     getHeadlines()
   }, [])
 
-  const selectArticle = (id) => {
+  const selectArticle = id => {
     // console.log(id)
     let selectedArticle;
     articlesArr.forEach(article => {
@@ -43,16 +43,14 @@ function App() {
         selectedArticle = article
       }
     })
-
     setSelectedArticle(selectedArticle)
-  }
+  };
 
   const deSelectArticle = () => {
     setSelectedArticle(null)
-  }
+  };
 
   return (
-
     <ContentWrap>
       <div className="menu-icon">
         <i className="fas fa-bars header__menu"></i>
@@ -62,7 +60,6 @@ function App() {
       <Main articlesArr={articlesArr} selectedArticle={selectedArticle} onSelect={selectArticle} deSelect={deSelectArticle} />
       <Footer />
     </ContentWrap>
-
   )
 }
 

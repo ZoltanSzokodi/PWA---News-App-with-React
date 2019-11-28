@@ -1,6 +1,6 @@
 .main {
   grid-area: main;
-  background-color: #8fd4d9;
+  background-color: white;
 }
 
 .main-header {
@@ -16,7 +16,7 @@
 .main-articles {
   column-count: 1;
   column-gap: 20px;
-  margin: 20px;
+  /* margin: 20px; */
 }
 
 /* Force varying heights to simulate dynamic content */
