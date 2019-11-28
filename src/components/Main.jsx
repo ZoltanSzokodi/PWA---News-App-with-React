@@ -1,7 +1,10 @@
 import React from 'react'
+import Card from './Card'
+import { uuid } from 'uuidv4';
 import '../styles/Main.css'
 
-function Main() {
+function Main(props) {
+  console.log(props.articlesArr)
   return (
     <main className="main">
       <div className="main-header">
@@ -29,10 +32,9 @@ function Main() {
       </div>
 
       <div className="main-cards">
-        <div className="card">Card</div>
-        <div className="card">Card</div>
-        <div className="card">Card</div>
-        <div className="card">Card</div>
+        {props.articlesArr.map(card => (
+          <Card key={uuid()} title={card.title} desctiption={card.desctiption} />
+        ))}
       </div>
     </main>
   )
