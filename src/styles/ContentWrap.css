@@ -1,0 +1,24 @@
+/* Assign grid instructions to our parent grid container, mobile-first (hide the sidenav) */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50px 1fr 50px;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  height: 100vh;
+  font-size: 1.6rem;
+}
+
+/* Non-mobile styles, 750px breakpoint */
+@media only screen and (min-width: 46.875em) {
+  /* Show the sidenav */
+  .grid-container {
+    grid-template-columns: 240px 1fr;
+    grid-template-areas:
+      "sidenav header"
+      "sidenav main"
+      "sidenav footer";
+  }
+}
