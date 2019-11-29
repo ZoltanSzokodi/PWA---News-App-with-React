@@ -1,13 +1,11 @@
 import React from 'react'
-// import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import MainFlags from './MainFlags'
 import ArticleContent from './ArticleContent'
 import Article from './Article'
-// import { uuid } from 'uuidv4';
+import Loader from './Loader'
 import '../styles/Main.css'
 
 function Main(props) {
-  console.log(props.articlesArr)
 
   const allArticles = (
     <React.Fragment>
@@ -25,12 +23,13 @@ function Main(props) {
   );
 
   const selectedArticle = <ArticleContent selectedArticle={props.selectedArticle} deSelect={props.deSelect} />
+  const renderArticles = () => {
+    return props.selectedArticle === null ? allArticles : selectedArticle
+  }
 
   return (
-
     <main className="main">
-      {props.selectedArticle === null ? allArticles : selectedArticle}
-
+      {props.isLoading ? <Loader /> : renderArticles()}
     </main >
   )
 }

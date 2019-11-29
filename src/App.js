@@ -5,11 +5,11 @@ import Header from './components/Header'
 import Sidenav from './components/Sidenav'
 import Main from './components/Main'
 import Footer from './components/Footer'
-// import data from './data/data';
 import './App.css';
 
 function App() {
   const [articlesArr, setArticlesArr] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [selectedArticle, setSelectedArticle] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedCountry, setSelectedCountry] = useState("us");
@@ -17,28 +17,28 @@ function App() {
 
   // ---------------------------------- FETCH DATA -------------------------------------
 
-  // useEffect(() => {
-  //   const getHeadlines = async (country, category) => {
-  //     const APIKey = '1f9659798f1841bb962c9bc56cc559a2'
-  //     const categ = category !== 'all' ? '&category=' + category : '';
-  //     const url = `https://newsapi.org/v2/top-headlines?country=${country}${categ}`;
-  //     const headers = { "X-Api-Key": APIKey };
+  useEffect(() => {
+    const getHeadlines = async (country, category) => {
+      const APIKey = '1f9659798f1841bb962c9bc56cc559a2'
+      const categ = category !== 'all' ? '&category=' + category : '';
+      const url = `https://newsapi.org/v2/top-headlines?country=${country}${categ}`;
+      const headers = { "X-Api-Key": APIKey };
 
-  //     try {
-  //       let response = await fetch(url, { headers });
-  //       let data = await response.json();
-  //       let dataWithKeys = [];
+      try {
+        let response = await fetch(url, { headers });
+        let data = await response.json();
+        let dataWithKeys = [];
 
-  //       data.articles.forEach(article => {
-  //         dataWithKeys.push({ ...article, uuid: uuid() })
-  //       })
+        data.articles.forEach(article => {
+          dataWithKeys.push({ ...article, uuid: uuid() })
+        })
 
-  //       setArticlesArr(dataWithKeys)
-  //     } catch (err) { console.log(err) }
-  //   }
-  //   getHeadlines(selectedCountry, selectedCategory)
-  // }, [selectedCountry, selectedCategory])
-
+        setArticlesArr(dataWithKeys)
+        setTimeout(() => { setIsLoading(false) }, 3000);
+      } catch (err) { console.log(err) }
+    }
+    getHeadlines(selectedCountry, selectedCategory)
+  }, [selectedCountry, selectedCategory])
   // ------------------------------- EVENT LISTENERS ----------------------------------
 
   const selectArticle = id => {
@@ -67,7 +67,6 @@ function App() {
 
   const toggleMenu = () => {
     setMenuState(!menuState)
-    console.log(menuState)
   }
 
   return (
@@ -76,13 +75,17 @@ function App() {
         <i className="fas fa-bars header__menu"></i>
       </div>
       <Header />
-      <Sidenav onSelect={selectCategory} menuState={menuState} toggleMenu={toggleMenu} />
+      <Sidenav
+        onSelect={selectCategory}
+        menuState={menuState}
+        toggleMenu={toggleMenu} />
       <Main
         articlesArr={articlesArr}
         selectedArticle={selectedArticle}
         onSelect={selectArticle}
         deSelect={deSelectArticle}
-        onCountrySelect={selectCountry} />
+        onCountrySelect={selectCountry}
+        isLoading={isLoading} />
       <Footer />
     </ContentWrap>
   )

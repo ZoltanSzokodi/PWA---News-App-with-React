@@ -8,6 +8,7 @@
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
+  margin-bottom: 20px;
 }
 
 /* Non-mobile styles, 750px breakpoint */

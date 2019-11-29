@@ -16,5 +16,14 @@
 .article__content-title,
 .article__content-real,
 .article__content-fake {
-  padding: 2rem 5rem;
+  padding: 1rem;
+}
+
+/* Non-mobile styles, 750px breakpoint */
+@media only screen and (min-width: 46.875em) {
+  .article__content-title,
+  .article__content-real,
+  .article__content-fake {
+    padding: 2rem 5rem;
+  }
 }

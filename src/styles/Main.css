@@ -6,11 +6,13 @@
 .main-header {
   display: flex;
   justify-content: space-between;
-  margin: 20px;
   padding: 20px;
-  height: 150px;
-  background-color: #e3e4e6;
-  color: slategray;
+  height: 300px;
+  /* background-color: #e3e4e6; */
+  background-image: url(../img/rishabh-sharma-R-js25Pv1LQ-unsplash.jpg);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.8;
 }
 
 .main-articles {
@@ -31,6 +33,12 @@
 .card:nth-child(3) {
   height: 265px;
 } */
+/* Non-mobile styles, 750px breakpoint */
+@media only screen and (min-width: 46.875em) {
+  .main-header {
+    margin: 20px;
+  }
+}
 
 /* Medium screens breakpoint (1050px) */
 @media only screen and (min-width: 65.625em) {
