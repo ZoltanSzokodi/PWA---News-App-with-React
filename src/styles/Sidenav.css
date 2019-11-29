@@ -33,16 +33,6 @@
   list-style-type: none;
 }
 
-.sidenav__list-item {
-  padding: 20px 20px 20px 40px;
-  color: #ddd;
-}
-
-.sidenav__list-item:hover {
-  background-color: #404040;
-  cursor: pointer;
-}
-
 /* Non-mobile styles, 750px breakpoint */
 @media only screen and (min-width: 46.875em) {
   .sidenav {

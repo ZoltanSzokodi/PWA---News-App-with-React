@@ -6,8 +6,9 @@
   background-color: #fff;
   margin-bottom: 2rem;
   -webkit-column-break-inside: avoid;
-  /* padding: 2.4rem; */
+  cursor: pointer;
   box-sizing: border-box;
+  transition: 0.3s;
 }
 
 .article-image {
@@ -21,8 +22,8 @@
 
 /* Medium screens breakpoint (1050px) */
 @media only screen and (min-width: 65.625em) {
-  /* .article-h2,
-  .article-h3 {
-    padding: 1rem;
-  } */
+  .article:hover {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+  }
 }

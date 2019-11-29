@@ -5,19 +5,19 @@ import Header from './components/Header'
 import Sidenav from './components/Sidenav'
 import Main from './components/Main'
 import Footer from './components/Footer'
-import randomText from './data/randomText'
 // import data from './data/data';
 import './App.css';
 
 function App() {
   const [articlesArr, setArticlesArr] = useState([]);
   const [selectedArticle, setSelectedArticle] = useState(null);
-  
+  const [selectedCategory, setSelectedCategory] = useState("all");
+
   useEffect(() => {
-    const getHeadlines = async () => {
+    const getHeadlines = async (category) => {
       const APIKey = '1f9659798f1841bb962c9bc56cc559a2'
-      // const categ = category !== undefined ? '&category=' + category : '';
-      const url = `https://newsapi.org/v2/top-headlines?country=hu`;
+      const categ = category !== 'all' ? '&category=' + category : '';
+      const url = `https://newsapi.org/v2/top-headlines?country=us${categ}`;
       const headers = { "X-Api-Key": APIKey };
 
       try {
@@ -26,14 +26,14 @@ function App() {
         let dataWithKeys = [];
 
         data.articles.forEach(article => {
-          dataWithKeys.push({ ...article, uuid: uuid(), dummyText: randomText.randomText })
+          dataWithKeys.push({ ...article, uuid: uuid() })
         })
 
         setArticlesArr(dataWithKeys)
       } catch (err) { console.log(err) }
     }
-    getHeadlines()
-  }, [])
+    getHeadlines(selectedCategory)
+  }, [selectedCategory])
 
   const selectArticle = id => {
     // console.log(id)
@@ -50,14 +50,24 @@ function App() {
     setSelectedArticle(null)
   };
 
+  const selectCategory = id => {
+    const idLc = id.toLowerCase();
+
+    setSelectedCategory(idLc)
+  }
+
   return (
     <ContentWrap>
       <div className="menu-icon">
         <i className="fas fa-bars header__menu"></i>
       </div>
       <Header />
-      <Sidenav />
-      <Main articlesArr={articlesArr} selectedArticle={selectedArticle} onSelect={selectArticle} deSelect={deSelectArticle} />
+      <Sidenav onSelect={selectCategory} />
+      <Main
+        articlesArr={articlesArr}
+        selectedArticle={selectedArticle}
+        onSelect={selectArticle}
+        deSelect={deSelectArticle} />
       <Footer />
     </ContentWrap>
   )
