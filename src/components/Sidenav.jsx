@@ -9,6 +9,7 @@ function Sidenav(props) {
       <div className="sidenav__close-icon">
         <i className="fas fa-times sidenav__brand-close"></i>
       </div>
+
       <ul className="sidenav__list">
         {sidenavOptions.map(option => (
           <SidenavListItem key={option} id={option} onSelect={props.onSelect} />

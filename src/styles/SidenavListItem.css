@@ -1,9 +1,9 @@
-.sidenav__list-item {
+.sidenav__list--item {
   padding: 20px 20px 20px 40px;
   color: #ddd;
 }
 
-.sidenav__list-item:hover {
+.sidenav__list--item:hover {
   background-color: #404040;
   cursor: pointer;
 }

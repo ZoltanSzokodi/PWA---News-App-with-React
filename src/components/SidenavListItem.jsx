@@ -4,7 +4,7 @@ import '../styles/SidenavListItem.css'
 function SidenavListItem(props) {
   return (
     <div onClick={() => props.onSelect(props.id)}>
-      <li className="sidenav__list-item">{props.id}</li>
+      <li className="sidenav__list--item">{props.id}</li>
     </div>
   )
 }
