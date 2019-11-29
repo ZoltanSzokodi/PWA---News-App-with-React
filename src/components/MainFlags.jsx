@@ -11,16 +11,21 @@ import ru from '../img/ru.svg'
 import se from '../img/se.svg'
 import tr from '../img/tr.svg'
 import us from '../img/us.svg'
-import hu from '../img/tr.svg'
-import ca from '../img/us.svg'
+import hu from '../img/hu.svg'
+import ca from '../img/ca.svg'
 
-const flagsArr = [de, fr, gb, it, kr, pl, ru, se, tr, us, hu, ca];
+const flagsArr = [{ src: de, country: "de" }, { src: fr, country: "fr" }, { src: gb, country: "gb" }, { src: it, country: "it" }, { src: kr, country: "kr" }, { src: pl, country: "pl" }, { src: ru, country: "ru" }, { src: se, country: "se" }, { src: tr, country: "tr" }, { src: us, country: "us" }, { src: hu, country: "hu" }, { src: ca, country: "ca" }];
 
-function MainFlags() {
+
+function MainFlags(props) {
   return (
     <div className="main-flags">
       {flagsArr.map(flag => (
-        <Flag key={flag} flag={flag} />
+        <Flag
+          key={flag.country}
+          id={flag.country}
+          flag={flag.src}
+          onCountrySelect={props.onCountrySelect} />
       ))}
     </div>
   )

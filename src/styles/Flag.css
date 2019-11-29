@@ -3,4 +3,10 @@
   height: 50px;
   border-radius: 50rem;
   margin: 2rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.flag:hover {
+  transform: scale(1.2);
 }

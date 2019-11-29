@@ -4,9 +4,10 @@ import '../styles/Sidenav.css'
 
 function Sidenav(props) {
   const sidenavOptions = ["All", "Business", "Entertainment", "Health", "Science", "Sports", "Technology"];
+
   return (
-    <aside className="sidenav">
-      <div className="sidenav__close-icon">
+    <aside className={props.menuState ? "sidenav active" : "sidenav"}>
+      <div className="sidenav__close-icon" onClick={props.toggleMenu}>
         <i className="fas fa-times sidenav__brand-close"></i>
       </div>
 

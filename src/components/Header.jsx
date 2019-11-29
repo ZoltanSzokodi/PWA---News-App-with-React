@@ -1,7 +1,7 @@
 import React from 'react'
 import '../styles/Header.css'
 
-function Header(props) {
+function Header() {
   return (
     <header className="header">
       <div className="header__search">Search...</div>

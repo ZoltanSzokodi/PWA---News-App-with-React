@@ -15,7 +15,7 @@ function Main(props) {
         <div className="main-header__heading">Hello User</div>
         <div className="main-header__updates">Recent Items</div>
       </div>
-      <MainFlags />
+      <MainFlags onCountrySelect={props.onCountrySelect} />
       <div className="main-articles">
         {props.articlesArr.map(article => (
           <Article key={article.uuid} article={article} onSelect={props.onSelect} />

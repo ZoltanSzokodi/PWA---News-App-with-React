@@ -4,7 +4,7 @@ import '../styles/ArticleContent.css'
 function ArticleContent(props) {
   return (
     <div className="article__content">
-      <img className="article__content-image" src={props.selectedArticle.urlToImage} alt="article-image" />
+      <img className="article__content-image" src={props.selectedArticle.urlToImage} alt="article" />
       <h2 className="article__content-title">{props.selectedArticle.title}</h2>
       <p className="article__content-real">{props.selectedArticle.content}</p>
       <p className="article__content-fake">

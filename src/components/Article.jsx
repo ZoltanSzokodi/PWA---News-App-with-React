@@ -3,7 +3,7 @@ import '../styles/Article.css'
 
 function Article(props) {
 
-  const displayImage = props.article.urlToImage !== null && <img className="article-image" src={props.article.urlToImage} alt="banner-image" />
+  const displayImage = props.article.urlToImage !== null && <img className="article-image" src={props.article.urlToImage} alt="banner" />
 
   return (
     <div className="article" onClick={() => props.onSelect(props.article.uuid)}>

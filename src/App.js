@@ -12,14 +12,16 @@ function App() {
   const [articlesArr, setArticlesArr] = useState([]);
   const [selectedArticle, setSelectedArticle] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState("all");
+  const [selectedCountry, setSelectedCountry] = useState("us");
+  const [menuState, setMenuState] = useState(false);
 
   // ---------------------------------- FETCH DATA -------------------------------------
 
   // useEffect(() => {
-  //   const getHeadlines = async (category) => {
+  //   const getHeadlines = async (country, category) => {
   //     const APIKey = '1f9659798f1841bb962c9bc56cc559a2'
   //     const categ = category !== 'all' ? '&category=' + category : '';
-  //     const url = `https://newsapi.org/v2/top-headlines?country=us${categ}`;
+  //     const url = `https://newsapi.org/v2/top-headlines?country=${country}${categ}`;
   //     const headers = { "X-Api-Key": APIKey };
 
   //     try {
@@ -34,8 +36,8 @@ function App() {
   //       setArticlesArr(dataWithKeys)
   //     } catch (err) { console.log(err) }
   //   }
-  //   getHeadlines(selectedCategory)
-  // }, [selectedCategory])
+  //   getHeadlines(selectedCountry, selectedCategory)
+  // }, [selectedCountry, selectedCategory])
 
   // ------------------------------- EVENT LISTENERS ----------------------------------
 
@@ -57,20 +59,30 @@ function App() {
   const selectCategory = id => {
     const idLc = id.toLowerCase();
     setSelectedCategory(idLc)
+  };
+
+  const selectCountry = id => {
+    setSelectedCountry(id)
+  }
+
+  const toggleMenu = () => {
+    setMenuState(!menuState)
+    console.log(menuState)
   }
 
   return (
     <ContentWrap>
-      <div className="menu-icon">
+      <div className="menu-icon" onClick={toggleMenu}>
         <i className="fas fa-bars header__menu"></i>
       </div>
       <Header />
-      <Sidenav onSelect={selectCategory} />
+      <Sidenav onSelect={selectCategory} menuState={menuState} toggleMenu={toggleMenu} />
       <Main
         articlesArr={articlesArr}
         selectedArticle={selectedArticle}
         onSelect={selectArticle}
-        deSelect={deSelectArticle} />
+        deSelect={deSelectArticle}
+        onCountrySelect={selectCountry} />
       <Footer />
     </ContentWrap>
   )
