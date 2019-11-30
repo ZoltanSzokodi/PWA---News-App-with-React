@@ -4,10 +4,14 @@ import '../styles/ArticleContent.css'
 function ArticleContent(props) {
   return (
     <div className="article__content">
-      <img className="article__content-image" src={props.selectedArticle.urlToImage} alt="article" />
-      <h2 className="article__content-title">{props.selectedArticle.title}</h2>
-      <p className="article__content-real">{props.selectedArticle.content}</p>
-      <p className="article__content-fake">
+      <div className="article__content__hide">
+        <h3 className="article__content__hide--message">Please sign in to read full article</h3>
+        <button onClick={props.handleGoBack}>Go Back</button>
+      </div>
+      <img className="article__content--image" src={props.selectedArticle.urlToImage} alt="article" />
+      <h2 className="article__content--title">{props.selectedArticle.title}</h2>
+      <p className="article__content--real">{props.selectedArticle.content}</p>
+      <p className="article__content--fake">
         Let us not wallow in the valley of despair, I say to you today, my frie
         And so even though we face the difficulties of today and tomorrow, I still have a dream. It is a dream deeply rooted in the American dream.
         I have a dream that one day this nation will rise up and live out the true meaning of its creed: "We hold these truths to be self-evident, that all men are created equal."

@@ -1,7 +1,7 @@
 .main-flags-wrapper {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
   margin-bottom: 20px;
   overflow-y: hidden;
@@ -14,16 +14,22 @@
 }
 
 /* Non-mobile styles, 750px breakpoint */
-@media only screen and (min-width: 46.875em) {
+@media only screen and (min-width: 75rem) {
   .main-flags {
     width: 750px;
   }
 }
 
 /* Medium screens breakpoint (1050px) */
-@media only screen and (min-width: 65.625em) {
+@media only screen and (min-width: 105rem) {
   .main-flags {
-    width: 1050px;
-    justify-content: center;
+    width: 1250px;
+  }
+}
+
+/* Medium screens breakpoint (1550px) */
+@media only screen and (min-width: 155.5rem) {
+  .main-flags {
+    width: 1750px;
   }
 }
