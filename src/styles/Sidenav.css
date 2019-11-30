@@ -2,6 +2,7 @@
   grid-area: sidenav;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   height: 100%;
   width: 240px;
   position: fixed;
@@ -27,9 +28,36 @@
   color: #ddd;
 }
 
+.sidenav__account {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+  background-color: #404040;
+  color: white;
+  margin-bottom: 6rem;
+}
+
+.sidenav__account--user-picture {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  border: 3px solid white;
+}
+
+.sidenav__nav-name {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
 .sidenav__list {
   padding: 0;
-  margin-top: 85px;
+  /* margin-top: 85px; */
   list-style-type: none;
 }
 

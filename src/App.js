@@ -35,6 +35,7 @@ function App() {
 
         setArticlesArr(dataWithKeys)
         setTimeout(() => { setIsLoading(false) }, 3000);
+        console.log(dataWithKeys)
       } catch (err) { console.log(err) }
     }
     getHeadlines(selectedCountry, selectedCategory)

@@ -2,15 +2,36 @@ import React from 'react'
 import '../styles/ArticleContent.css'
 
 function ArticleContent(props) {
+  const { handleGoBack } = props;
+  const {
+    urlToImage,
+    author,
+    publishedAt,
+    title,
+    content
+  } = props.selectedArticle;
+
+  // getting rid of unvanted chars in publishedAt str
+  const published = publishedAt.split("");
+  published.map((char, i) => {
+    if (char === "T" || char === "Z") {
+      published.splice(i, 1, " ")
+    }
+  })
+
   return (
     <div className="article__content">
       <div className="article__content__hide">
         <h3 className="article__content__hide--message">Please sign in to read full article</h3>
-        <button onClick={props.handleGoBack}>Go Back</button>
+        <button onClick={handleGoBack}>Go Back</button>
       </div>
-      <img className="article__content--image" src={props.selectedArticle.urlToImage} alt="article" />
-      <h2 className="article__content--title">{props.selectedArticle.title}</h2>
-      <p className="article__content--real">{props.selectedArticle.content}</p>
+      <img className="article__content--image" src={urlToImage} alt="article" />
+      <div className="article__content--details">
+        <span>author: {author}</span>
+        <span>published at - {published}</span>
+      </div>
+      <h2 className="article__content--title">{title}</h2>
+      <p className="article__content--real">{content}</p>
       <p className="article__content--fake">
         Let us not wallow in the valley of despair, I say to you today, my frie
         And so even though we face the difficulties of today and tomorrow, I still have a dream. It is a dream deeply rooted in the American dream.
@@ -145,7 +166,7 @@ function ArticleContent(props) {
         Thank God Almighty, we are free at last!
       </p>
 
-      <button onClick={props.handleGoBack}>Go Back</button>
+      <button onClick={handleGoBack}>Go Back</button>
     </div>
   );
 }

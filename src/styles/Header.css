@@ -13,6 +13,11 @@
   margin-left: 42px;
 }
 
+.header__signin {
+  height: 100%;
+  width: 100px;
+}
+
 /* Non-mobile styles, 750px breakpoint */
 @media only screen and (min-width: 46.875em) {
   .header__search {

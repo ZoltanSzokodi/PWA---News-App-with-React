@@ -12,7 +12,7 @@
 }
 
 /* Non-mobile styles, 750px breakpoint */
-@media only screen and (min-width: 46.875em) {
+@media only screen and (min-width: 75rem) {
   /* Show the sidenav */
   .grid-container {
     grid-template-columns: 240px 1fr;

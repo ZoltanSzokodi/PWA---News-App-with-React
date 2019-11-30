@@ -5,7 +5,7 @@ function Header() {
   return (
     <header className="header">
       <div className="header__search">Search...</div>
-      <div className="header__avatar">Your face</div>
+      <button className="header__signin">sign in</button>
     </header>
   );
 }
