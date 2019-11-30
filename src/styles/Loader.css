@@ -7,8 +7,7 @@
   margin-top: -200px;
   margin-left: -200px;
   border-radius: 50%;
-  background: #e3e4e6;
-  color: #fff;
+  background: #fff;
 }
 
 .center {
@@ -26,12 +25,12 @@
   height: 30px;
   top: 95px;
   left: 95px;
-  background: #fff;
+  background: #e0e0e0;
   border-radius: 50%;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
-  -webkit-animation: jump-jump-1 2s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
-  animation: jump-jump-1 2s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
+  -webkit-animation: jump-jump-1 1.8s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
+  animation: jump-jump-1 1.8s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
 }
 
 .dot-2 {
@@ -41,12 +40,12 @@
   height: 60px;
   top: 80px;
   left: 80px;
-  background: #fff;
+  background: #e8e8e8;
   border-radius: 50%;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
-  -webkit-animation: jump-jump-2 2s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
-  animation: jump-jump-2 2s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
+  -webkit-animation: jump-jump-2 1.8s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
+  animation: jump-jump-2 1.8s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
 }
 
 .dot-3 {
@@ -56,12 +55,18 @@
   height: 90px;
   top: 65px;
   left: 65px;
-  background: #fff;
+  background: #f0f0f0;
   border-radius: 50%;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
-  -webkit-animation: jump-jump-3 2s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
-  animation: jump-jump-3 2s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
+  -webkit-animation: jump-jump-3 1.8s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
+  animation: jump-jump-3 1.8s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
+}
+
+.frame h3 {
+  position: absolute;
+  top: 260px;
+  left: 155px;
 }
 
 @-webkit-keyframes jump-jump-1 {

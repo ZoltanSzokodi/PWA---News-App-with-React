@@ -6,7 +6,7 @@ function ContentWrap(props) {
     <div className="grid-container">
       {props.children}
     </div>
-  )
+  );
 }
 
-export default ContentWrap
+export default ContentWrap;

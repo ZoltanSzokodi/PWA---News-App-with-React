@@ -1,12 +1,12 @@
 import React from 'react'
 import '../styles/SidenavListItem.css'
 
-function SidenavListItem(props) {
+function SidenavListItem({ handleCategorySelect, id }) {
   return (
-    <div onClick={() => props.onSelect(props.id)}>
-      <li className="sidenav__list--item">{props.id}</li>
+    <div onClick={() => handleCategorySelect(id)}>
+      <li className="sidenav__list--item">{id}</li>
     </div>
   )
 }
 
-export default SidenavListItem
+export default SidenavListItem;

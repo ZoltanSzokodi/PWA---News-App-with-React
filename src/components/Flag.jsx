@@ -1,12 +1,13 @@
 import React from 'react'
 import '../styles/Flag.css'
 
-function Flag(props) {
+function Flag({ handleCountrySelect, id, flag }) {
+  // fetch headlinse from the selected country
   return (
-    <div onClick={() => props.onCountrySelect(props.id)}>
-      <img className="flag" src={props.flag} alt={props.flag} />
+    <div onClick={() => handleCountrySelect(id)}>
+      <img className="flag" src={flag} alt={flag} />
     </div>
   );
 }
 
-export default Flag
+export default Flag;

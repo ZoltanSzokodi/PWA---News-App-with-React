@@ -6,6 +6,14 @@ import Loader from './Loader'
 import '../styles/Main.css'
 
 function Main(props) {
+  const {
+    handleCountrySelect,
+    handleArticleSelect,
+    handleGoBack,
+    articlesArr,
+    selectedArticle,
+    isLoading
+  } = props;
 
   const allArticles = (
     <React.Fragment>
@@ -13,25 +21,36 @@ function Main(props) {
         <div className="main-header__heading">Hello User</div>
         <div className="main-header__updates">Recent Items</div>
       </div>
-      <MainFlags onCountrySelect={props.onCountrySelect} />
+
+      <MainFlags handleCountrySelect={handleCountrySelect} />
+
       <div className="main-articles">
-        {props.articlesArr.map(article => (
-          <Article key={article.uuid} article={article} onSelect={props.onSelect} />
+        {/* render all the fetched articles */}
+        {articlesArr.map(article => (
+          <Article
+            key={article.uuid}
+            article={article}
+            handleArticleSelect={handleArticleSelect}
+          />
         ))}
       </div>
     </React.Fragment>
   );
 
-  const selectedArticle = <ArticleContent selectedArticle={props.selectedArticle} deSelect={props.deSelect} />
+  // single article that has been clicked on
+  const oneArticle = <ArticleContent selectedArticle={selectedArticle} handleGoBack={handleGoBack} />
+
+  // if an article was clicked on render that article, else render all the articles
   const renderArticles = () => {
-    return props.selectedArticle === null ? allArticles : selectedArticle
+    return selectedArticle === null ? allArticles : oneArticle;
   }
 
   return (
     <main className="main">
-      {props.isLoading ? <Loader /> : renderArticles()}
+      {/* on page load first show the loader/spinner (3s) */}
+      {isLoading ? <Loader /> : renderArticles()}
     </main >
-  )
+  );
 }
 
-export default Main
+export default Main;

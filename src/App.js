@@ -5,7 +5,7 @@ import Header from './components/Header'
 import Sidenav from './components/Sidenav'
 import Main from './components/Main'
 import Footer from './components/Footer'
-import './App.css';
+import './styles/App.css';
 
 function App() {
   const [articlesArr, setArticlesArr] = useState([]);
@@ -15,11 +15,11 @@ function App() {
   const [selectedCountry, setSelectedCountry] = useState("us");
   const [menuState, setMenuState] = useState(false);
 
-  // ---------------------------------- FETCH DATA -------------------------------------
+  // ********************************** FETCH DATA ***********************************
 
   useEffect(() => {
     const getHeadlines = async (country, category) => {
-      const APIKey = '1f9659798f1841bb962c9bc56cc559a2'
+      const APIKey = '1f9659798f1841bb962c9bc56cc559a2';
       const categ = category !== 'all' ? '&category=' + category : '';
       const url = `https://newsapi.org/v2/top-headlines?country=${country}${categ}`;
       const headers = { "X-Api-Key": APIKey };
@@ -39,10 +39,11 @@ function App() {
     }
     getHeadlines(selectedCountry, selectedCategory)
   }, [selectedCountry, selectedCategory])
-  // ------------------------------- EVENT LISTENERS ----------------------------------
 
-  const selectArticle = id => {
-    // console.log(id)
+  // *************************** EVENT LISTENERS **********************************
+
+  // ------------------------ CLICK AND OPEN AN ARTICLE ---------------------------
+  const handleArticleSelect = id => {
     let selectedArticle;
     articlesArr.forEach(article => {
       if (article.uuid === id) {
@@ -52,43 +53,47 @@ function App() {
     setSelectedArticle(selectedArticle)
   };
 
-  const deSelectArticle = () => {
+  // ------------------------ GO BACK FROM OPENED ARTICLE -------------------------
+  const handleGoBack = () => {
     setSelectedArticle(null)
   };
 
-  const selectCategory = id => {
+  // ------------------------ SELECT A NEWS CATEGORY ------------------------------
+  const handleCategorySelect = id => {
     const idLc = id.toLowerCase();
     setSelectedCategory(idLc)
   };
 
-  const selectCountry = id => {
+  // ------------------------ SELECT A COUNTRY ------------------------------------
+  const handleCountrySelect = id => {
     setSelectedCountry(id)
-  }
+  };
 
-  const toggleMenu = () => {
+  // ------------------------ OPEN / CLOSE SIDENAV --------------------------------
+  const handleToggleMenu = () => {
     setMenuState(!menuState)
-  }
+  };
 
   return (
     <ContentWrap>
-      <div className="menu-icon" onClick={toggleMenu}>
+      <div className="menu-icon" onClick={handleToggleMenu}>
         <i className="fas fa-bars header__menu"></i>
       </div>
       <Header />
       <Sidenav
-        onSelect={selectCategory}
+        handleCategorySelect={handleCategorySelect}
         menuState={menuState}
-        toggleMenu={toggleMenu} />
+        handleToggleMenu={handleToggleMenu} />
       <Main
         articlesArr={articlesArr}
         selectedArticle={selectedArticle}
-        onSelect={selectArticle}
-        deSelect={deSelectArticle}
-        onCountrySelect={selectCountry}
+        handleArticleSelect={handleArticleSelect}
+        handleGoBack={handleGoBack}
+        handleCountrySelect={handleCountrySelect}
         isLoading={isLoading} />
       <Footer />
     </ContentWrap>
-  )
+  );
 }
 
 export default App;

@@ -9,8 +9,9 @@ function Loader() {
         <div className="dot-2"></div>
         <div className="dot-3"></div>
       </div>
+      <h3>it's coming</h3>
     </div>
-  )
+  );
 }
 
-export default Loader
+export default Loader;
