@@ -12,6 +12,7 @@
   font-size: 1.8rem;
   z-index: 200; /* Needs to sit above the hamburger menu icon */
   background-color: #e9eaeb;
+  overflow: hidden;
 }
 
 .sidenav--dark {
@@ -70,7 +71,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: black;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
@@ -88,7 +89,7 @@
 }
 
 input:checked + .slider {
-  background-color: black;
+  background-color: #ccc;
 }
 
 input:focus + .slider {
@@ -167,11 +168,6 @@ input:checked + .slider:before {
   width: 30px;
   border-radius: 50%;
   margin-right: 3.7rem;
-  border: 2px solid black;
-}
-
-.sidenav__nav-selected-country-flag--dark {
-  border: 2px solid white;
 }
 
 .sidenav__list {

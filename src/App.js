@@ -35,7 +35,6 @@ function App() {
         })
 
         setArticlesArr(dataWithKeys)
-        // setTimeout(() => { setIsLoading(false) }, 3000);
 
       } catch (err) { console.log(err) }
     }

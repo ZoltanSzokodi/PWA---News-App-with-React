@@ -42,7 +42,7 @@ function Sidenav(props) {
 
       {/* toggle dark mode */}
       <div className="sidenav__switch">
-        <h4>{darkMode ? "Dark theme" : "Light theme"}</h4>
+        <h4>{darkMode ? "Light theme" : "Dark theme"}</h4>
         <label className="switch">
           <input type="checkbox" onChange={handleToggleDarkMode} />
           <span className="slider round"></span>
@@ -51,7 +51,7 @@ function Sidenav(props) {
 
       <div className={darkMode ? "sidenav__nav-selected-country sidenav__nav-selected-country--dark" : "sidenav__nav-selected-country"}>
         <h4>Country ({selectedCountry.country})</h4>
-        <img className={darkMode ? "sidenav__nav-selected-country-flag sidenav__nav-selected-country-flag--dark" : "sidenav__nav-selected-country-flag"} src={selectedCountry.src} alt={selectedCountry.country} />
+        <img className="sidenav__nav-selected-country-flag" src={selectedCountry.src} alt={selectedCountry.country} />
       </div>
 
       <div className={darkMode ? "sidenav__nav-categories-title sidenav__nav-categories-title--dark" : "sidenav__nav-categories-title"}>

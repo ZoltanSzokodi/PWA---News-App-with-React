@@ -3,33 +3,33 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
   overflow-y: hidden;
 }
 
 .main-flags {
   display: flex;
   justify-content: flex-start;
-  width: 475px;
+  width: 47.5rem;
 }
 
 /* Non-mobile styles, 750px breakpoint */
 @media only screen and (min-width: 75rem) {
   .main-flags {
-    width: 750px;
+    width: 75rem;
   }
 }
 
 /* Medium screens breakpoint (1050px) */
 @media only screen and (min-width: 105rem) {
   .main-flags {
-    width: 1250px;
+    width: 125rem;
   }
 }
 
 /* Medium screens breakpoint (1550px) */
 @media only screen and (min-width: 155.5rem) {
   .main-flags {
-    width: 1750px;
+    width: 175rem;
   }
 }

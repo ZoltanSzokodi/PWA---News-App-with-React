@@ -4,11 +4,14 @@
   align-items: center;
   width: 100%;
   background-color: #fff;
-  margin-bottom: 2rem;
   -webkit-column-break-inside: avoid;
   cursor: pointer;
   box-sizing: border-box;
   transition: 0.3s;
+}
+
+.article:hover {
+  transform: scale(1.015);
 }
 
 .article--dark {
@@ -27,10 +30,10 @@
 }
 
 /* Medium screens breakpoint (1050px) */
-@media only screen and (min-width: 65.625em) {
+/* @media only screen and (min-width: 105rem) {
   .article:hover,
   .article--dark:hover {
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
-    transform: translateY(-2px);
+    transform: scale(-2px);
   }
-}
+} */
