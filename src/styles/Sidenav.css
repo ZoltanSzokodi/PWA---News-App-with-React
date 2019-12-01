@@ -36,7 +36,7 @@
   width: 100%;
   background-color: #404040;
   color: white;
-  margin-bottom: 6rem;
+  margin-bottom: 3rem;
 }
 
 .sidenav__account--user-picture {
@@ -46,13 +46,21 @@
   border: 3px solid white;
 }
 
-.sidenav__nav-name {
+.sidenav__nav-categories-title,
+.sidenav__nav-selected-country {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
   color: white;
   width: 100%;
-  margin-bottom: 2rem;
+  margin: 0 0 2rem 3rem;
+}
+
+.sidenav__nav-selected-country--flag {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  margin-left: 5rem;
 }
 
 .sidenav__list {
@@ -62,7 +70,7 @@
 }
 
 /* Non-mobile styles, 750px breakpoint */
-@media only screen and (min-width: 46.875em) {
+@media only screen and (min-width: 75rem) {
   .sidenav {
     /* position: fixed; */
     transform: translateX(0);

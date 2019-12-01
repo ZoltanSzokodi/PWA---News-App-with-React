@@ -27,8 +27,8 @@ function ArticleContent(props) {
       </div>
       <img className="article__content--image" src={urlToImage} alt="article" />
       <div className="article__content--details">
-        <span>author: {author}</span>
-        <span>published at - {published}</span>
+        <span>{author}</span>
+        <span>{published}</span>
       </div>
       <h2 className="article__content--title">{title}</h2>
       <p className="article__content--real">{content}</p>

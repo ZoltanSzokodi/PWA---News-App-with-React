@@ -5,9 +5,11 @@
   margin: 2rem;
   cursor: pointer;
   transition: 0.3s;
+  filter: grayscale(50%);
 }
 
 .flag:hover {
   transform: scale(1.2);
   box-shadow: 3px 3px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+  filter: grayscale(0%);
 }

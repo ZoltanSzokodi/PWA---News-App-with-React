@@ -1,10 +1,17 @@
 import React from 'react'
 import SidenavListItem from './SidenavListItem'
+import flagsArr from '../data/flagsArr'
 import '../styles/Sidenav.css'
 import userPicture from '../img/30.jpg'
 
-function Sidenav({ menuState, handleToggleMenu, handleCategorySelect }) {
+function Sidenav(props) {
   const sidenavOptions = ["All", "Business", "Entertainment", "Health", "Science", "Sports", "Technology"];
+  const {
+    menuState,
+    handleToggleMenu,
+    handleCategorySelect,
+    selectedCountry
+  } = props;
 
   return (
     // toggle menu according to menuStae
@@ -18,9 +25,14 @@ function Sidenav({ menuState, handleToggleMenu, handleCategorySelect }) {
         <span>Ben Smith</span>
       </div>
 
-      <div className="sidenav__nav-name">
-        <h4>Categories</h4>
-        <i className="far fa-newspaper"></i>
+      <div className="sidenav__nav-selected-country">
+        <h4>Country</h4>
+        <span>({selectedCountry.country})</span>
+        <img className="sidenav__nav-selected-country--flag" src={selectedCountry.src} alt={selectedCountry.country} />
+      </div>
+
+      <div className="sidenav__nav-categories-title">
+        <h4>Categories <i class="fas fa-sort-down"></i></h4>
       </div>
 
       {/* render the category oprions in the navigation */}

@@ -12,7 +12,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [selectedArticle, setSelectedArticle] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState("all");
-  const [selectedCountry, setSelectedCountry] = useState("us");
+  const [selectedCountry, setSelectedCountry] = useState({ src: '/static/media/us.f4cc0b5e.svg', country: "us" });
   const [menuState, setMenuState] = useState(false);
 
   // ********************************** FETCH DATA ***********************************
@@ -38,7 +38,7 @@ function App() {
         console.log(dataWithKeys)
       } catch (err) { console.log(err) }
     }
-    getHeadlines(selectedCountry, selectedCategory)
+    getHeadlines(selectedCountry.country, selectedCategory)
   }, [selectedCountry, selectedCategory])
 
   // *************************** EVENT LISTENERS **********************************
@@ -66,8 +66,8 @@ function App() {
   };
 
   // ------------------------ SELECT A COUNTRY ------------------------------------
-  const handleCountrySelect = id => {
-    setSelectedCountry(id)
+  const handleCountrySelect = flagobj => {
+    setSelectedCountry(flagobj)
   };
 
   // ------------------------ OPEN / CLOSE SIDENAV --------------------------------
@@ -84,7 +84,10 @@ function App() {
       <Sidenav
         handleCategorySelect={handleCategorySelect}
         menuState={menuState}
-        handleToggleMenu={handleToggleMenu} />
+        handleToggleMenu={handleToggleMenu}
+        selectedCountry={selectedCountry}
+      />
+
       <Main
         articlesArr={articlesArr}
         selectedArticle={selectedArticle}
