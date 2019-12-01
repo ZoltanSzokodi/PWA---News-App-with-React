@@ -1,6 +1,7 @@
 .sidenav__list--item {
-  padding: 20px 20px 20px 40px;
+  padding: 15px 0px 15px 55px;
   color: #ddd;
+  transition: 0.2s;
 }
 
 .sidenav__list--item:hover {

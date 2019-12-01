@@ -35,9 +35,24 @@
   font-size: 1rem;
 }
 
+.article__content--title {
+  background-color: black;
+  color: white;
+  margin-bottom: 4rem;
+}
+
 .article__content--title,
 .article__content--real,
 .article__content--fake {
+  padding: 1rem;
+}
+
+.article__content-important {
+  background-color: #e3e4e6;
+  color: black;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 4rem;
   padding: 1rem;
 }
 

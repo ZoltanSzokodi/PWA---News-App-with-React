@@ -41,6 +41,11 @@ function App() {
     getHeadlines(selectedCountry.country, selectedCategory)
   }, [selectedCountry, selectedCategory])
 
+  // when opening an article jump to the top os the page
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [selectedArticle])
+
   // *************************** EVENT LISTENERS **********************************
 
   // ------------------------ CLICK AND OPEN AN ARTICLE ---------------------------

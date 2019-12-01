@@ -39,6 +39,8 @@ function ArticleContent(props) {
         I have a dream that one day on the red hills of Georgia, the sons of former slaves and the sons of former slave owners will be able to sit down together at the table of brotherhood.
         I have a dream that one day even the state of Mississippi, a state sweltering with the heat of injustice, sweltering with the heat of oppression, will be transformed into an oasis of freedom and justice.
         <br /><br />
+        <span className="article__content-important">I have a dream that one day every valley shall be exalted, and every hill and mountain shall be made low, the rough places will be made plain, and the crooked    places will be made straight; "and the glory of the Lord shall be revealed and all flesh shall see it  together."</span>
+        <br /><br />
         I have a dream that my four little children will one day live in a nation where they will not be judged by the color of their skin but by the content of their character.
         I have a dream today!
         I have a dream that one day, down in Alabama, with its vicious racists, with its governor having his lips dripping with the words of "interposition" and "nullification" -- one day right there in Alabama little black boys and black girls will be able to join hands with little white boys and white girls as sisters and brothers.
@@ -65,6 +67,8 @@ function ArticleContent(props) {
         And when this happens, and when we allow freedom ring, when we let it ring from every village and every hamlet, from every state and every city, we will be able to speed up that day when all of God's children, black men and white men, Jews and Gentiles, Protestants and Catholics, will be able to join hands and sing in the words of the old Negro spiritual:
         Free at last! Free at last!
         Thank God Almighty, we are free at last!
+        <br /><br />
+        <span className="article__content-important">I have a dream that one day on the red hills of Georgia, the sons of former slaves and the sons of former slave owners will be able to sit down together at the table of brotherhood.</span>
         <br /><br />
         Let us not wallow in the valley of despair, I say to you today, my frie
         And so even though we face the difficulties of today and tomorrow, I still have a dream. It is a dream deeply rooted in the American dream.

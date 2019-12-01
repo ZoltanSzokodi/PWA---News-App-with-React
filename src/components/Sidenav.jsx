@@ -1,6 +1,5 @@
 import React from 'react'
 import SidenavListItem from './SidenavListItem'
-import flagsArr from '../data/flagsArr'
 import '../styles/Sidenav.css'
 import userPicture from '../img/30.jpg'
 
@@ -26,13 +25,12 @@ function Sidenav(props) {
       </div>
 
       <div className="sidenav__nav-selected-country">
-        <h4>Country</h4>
-        <span>({selectedCountry.country})</span>
+        <h4>Country ({selectedCountry.country})</h4>
         <img className="sidenav__nav-selected-country--flag" src={selectedCountry.src} alt={selectedCountry.country} />
       </div>
 
       <div className="sidenav__nav-categories-title">
-        <h4>Categories <i class="fas fa-sort-down"></i></h4>
+        <h4>Categories <i className="fas fa-sort-down"></i></h4>
       </div>
 
       {/* render the category oprions in the navigation */}

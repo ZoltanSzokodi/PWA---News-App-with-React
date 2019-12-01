@@ -2,7 +2,7 @@
   grid-area: sidenav;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   height: 100%;
   width: 240px;
   position: fixed;
@@ -36,7 +36,7 @@
   width: 100%;
   background-color: #404040;
   color: white;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 }
 
 .sidenav__account--user-picture {
@@ -46,21 +46,28 @@
   border: 3px solid white;
 }
 
-.sidenav__nav-categories-title,
-.sidenav__nav-selected-country {
+.sidenav__nav-categories-title {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   color: white;
   width: 100%;
-  margin: 0 0 2rem 3rem;
+  margin: 0 0 1rem 3rem;
+}
+.sidenav__nav-selected-country {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  margin: 0 0 1.5rem 3rem;
 }
 
 .sidenav__nav-selected-country--flag {
   height: 30px;
   width: 30px;
   border-radius: 50%;
-  margin-left: 5rem;
+  margin-right: 4rem;
+  border: 1.5px solid white;
 }
 
 .sidenav__list {
@@ -75,7 +82,6 @@
     /* position: fixed; */
     transform: translateX(0);
   }
-
   .sidenav__close-icon {
     visibility: hidden;
   }
