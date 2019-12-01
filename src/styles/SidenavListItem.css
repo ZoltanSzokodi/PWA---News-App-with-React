@@ -1,10 +1,18 @@
-.sidenav__list--item {
+.sidenav__list-item {
   padding: 15px 0px 15px 55px;
-  color: #ddd;
+  color: black;
   transition: 0.2s;
 }
 
-.sidenav__list--item:hover {
-  background-color: #404040;
+.sidenav__list-item--dark {
+  color: #ddd;
+}
+
+.sidenav__list-item:hover {
+  background-color: #a6a6a6;
   cursor: pointer;
+}
+
+.sidenav__list-item--dark:hover {
+  background-color: #404040;
 }

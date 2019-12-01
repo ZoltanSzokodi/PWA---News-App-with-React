@@ -14,6 +14,7 @@ function App() {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedCountry, setSelectedCountry] = useState({ src: '/static/media/us.f4cc0b5e.svg', country: "us" });
   const [menuState, setMenuState] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
 
   // ********************************** FETCH DATA ***********************************
 
@@ -34,8 +35,8 @@ function App() {
         })
 
         setArticlesArr(dataWithKeys)
-        setTimeout(() => { setIsLoading(false) }, 3000);
-        console.log(dataWithKeys)
+        // setTimeout(() => { setIsLoading(false) }, 3000);
+
       } catch (err) { console.log(err) }
     }
     getHeadlines(selectedCountry.country, selectedCategory)
@@ -45,6 +46,12 @@ function App() {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [selectedArticle])
+
+  // show loader when selecting a country or category
+  useEffect(() => {
+    setIsLoading(true)
+    setTimeout(() => { setIsLoading(false) }, 1500);
+  }, [selectedCategory, selectedCountry])
 
   // *************************** EVENT LISTENERS **********************************
 
@@ -80,17 +87,24 @@ function App() {
     setMenuState(!menuState)
   };
 
+  // ------------------------ TOGGLE DARK MODE ---------------------------------
+  const handleToggleDarkMode = () => {
+    setDarkMode(!darkMode)
+  };
+
   return (
     <ContentWrap>
       <div className="menu-icon" onClick={handleToggleMenu}>
         <i className="fas fa-bars header__menu"></i>
       </div>
-      <Header />
+      <Header darkMode={darkMode} />
       <Sidenav
         handleCategorySelect={handleCategorySelect}
+        handleToggleDarkMode={handleToggleDarkMode}
         menuState={menuState}
         handleToggleMenu={handleToggleMenu}
         selectedCountry={selectedCountry}
+        darkMode={darkMode}
       />
 
       <Main
@@ -99,8 +113,10 @@ function App() {
         handleArticleSelect={handleArticleSelect}
         handleGoBack={handleGoBack}
         handleCountrySelect={handleCountrySelect}
-        isLoading={isLoading} />
-      <Footer />
+        isLoading={isLoading}
+        darkMode={darkMode}
+      />
+      <Footer darkMode={darkMode} />
     </ContentWrap>
   );
 }

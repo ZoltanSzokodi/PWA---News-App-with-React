@@ -8,28 +8,53 @@ function Sidenav(props) {
   const {
     menuState,
     handleToggleMenu,
+    handleToggleDarkMode,
     handleCategorySelect,
-    selectedCountry
+    selectedCountry,
+    darkMode
   } = props;
 
+  const toggleClasses = () => {
+    let classes;
+    if (menuState && darkMode) {
+      classes = "sidenav active sidenav--dark";
+    } else if (!menuState && darkMode) {
+      classes = "sidenav sidenav--dark";
+    } else if (menuState && !darkMode) {
+      classes = "sidenav active";
+    } else if (!menuState && !darkMode) {
+      classes = "sidenav";
+    }
+    return classes;
+  }
+  // { darkMode ? "sidenav__close-icon sidenav__close-icon--dark" : "sidenav__close-icon" }
   return (
     // toggle menu according to menuStae
-    <aside className={menuState ? "sidenav active" : "sidenav"}>
-      <div className="sidenav__close-icon" onClick={handleToggleMenu}>
-        <i className="fas fa-times sidenav__brand-close"></i>
+    <aside className={toggleClasses()}>
+      <div className={darkMode ? "sidenav__close-icon sidenav__close-icon--dark" : "sidenav__close-icon"} onClick={handleToggleMenu}>
+        <i className="fas fa-times"></i>
       </div>
 
-      <div className="sidenav__account">
-        <img className="sidenav__account--user-picture" src={userPicture} alt="user" />
+      <div className={darkMode ? "sidenav__account sidenav__account--dark" : "sidenav__account"}>
+        <img className={darkMode ? "sidenav__account-user-picture sidenav__account-user-picture--dark" : "sidenav__account-user-picture"} src={userPicture} alt="user" />
         <span>Ben Smith</span>
       </div>
 
-      <div className="sidenav__nav-selected-country">
-        <h4>Country ({selectedCountry.country})</h4>
-        <img className="sidenav__nav-selected-country--flag" src={selectedCountry.src} alt={selectedCountry.country} />
+      {/* toggle dark mode */}
+      <div className="sidenav__switch">
+        <h4>{darkMode ? "Dark theme" : "Light theme"}</h4>
+        <label className="switch">
+          <input type="checkbox" onChange={handleToggleDarkMode} />
+          <span className="slider round"></span>
+        </label>
       </div>
 
-      <div className="sidenav__nav-categories-title">
+      <div className={darkMode ? "sidenav__nav-selected-country sidenav__nav-selected-country--dark" : "sidenav__nav-selected-country"}>
+        <h4>Country ({selectedCountry.country})</h4>
+        <img className={darkMode ? "sidenav__nav-selected-country-flag sidenav__nav-selected-country-flag--dark" : "sidenav__nav-selected-country-flag"} src={selectedCountry.src} alt={selectedCountry.country} />
+      </div>
+
+      <div className={darkMode ? "sidenav__nav-categories-title sidenav__nav-categories-title--dark" : "sidenav__nav-categories-title"}>
         <h4>Categories <i className="fas fa-sort-down"></i></h4>
       </div>
 
@@ -39,7 +64,9 @@ function Sidenav(props) {
           <SidenavListItem
             key={option}
             id={option}
-            handleCategorySelect={handleCategorySelect} />
+            handleCategorySelect={handleCategorySelect}
+            darkMode={darkMode}
+          />
         ))}
       </ul>
     </aside>

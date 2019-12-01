@@ -1,9 +1,9 @@
 import React from 'react'
 import '../styles/Header.css'
 
-function Header() {
+function Header({ darkMode }) {
   return (
-    <header className="header">
+    <header className={darkMode ? "header header--dark" : "header"}>
       <div className="header__search">Search...</div>
       <button className="header__signin">sign in</button>
     </header>

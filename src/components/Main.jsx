@@ -12,7 +12,8 @@ function Main(props) {
     handleGoBack,
     articlesArr,
     selectedArticle,
-    isLoading
+    isLoading,
+    darkMode
   } = props;
 
   const allArticles = (
@@ -31,6 +32,7 @@ function Main(props) {
             key={article.uuid}
             article={article}
             handleArticleSelect={handleArticleSelect}
+            darkMode={darkMode}
           />
         ))}
       </div>
@@ -38,7 +40,7 @@ function Main(props) {
   );
 
   // single article that has been clicked on
-  const oneArticle = <ArticleContent selectedArticle={selectedArticle} handleGoBack={handleGoBack} />
+  const oneArticle = <ArticleContent selectedArticle={selectedArticle} handleGoBack={handleGoBack} darkMode={darkMode} />
 
   // if an article was clicked on render that article, else render all the articles
   const renderArticles = () => {
@@ -46,7 +48,7 @@ function Main(props) {
   }
 
   return (
-    <main className="main">
+    <main className={darkMode ? "main main--dark" : "main"}>
       {/* on page load first show the loader/spinner (3s) */}
       {isLoading ? <Loader /> : renderArticles()}
     </main >

@@ -9,9 +9,14 @@
   overflow-y: auto;
   transform: translateX(-245px);
   transition: all 0.6s ease-in-out;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+  font-size: 1.8rem;
   z-index: 200; /* Needs to sit above the hamburger menu icon */
+  background-color: #e9eaeb;
+}
+
+.sidenav--dark {
   background-color: #0d0d0d;
+  color: white;
 }
 
 .sidenav.active {
@@ -25,8 +30,86 @@
   right: 12px;
   cursor: pointer;
   font-size: 20px;
+  color: #0d0d0d;
+}
+
+.sidenav__close-icon--dark {
   color: #ddd;
 }
+
+/* ------------------------ DARK MODE SWITCH ------------------------- */
+.sidenav__switch {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 0 1rem 3rem;
+}
+
+.sidenav__switch h4 {
+  margin-right: 4rem;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 5.5rem;
+  height: 2.9rem;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: black;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px black;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+/* ------------------------------------------------------------------- */
 
 .sidenav__account {
   display: flex;
@@ -34,15 +117,24 @@
   align-items: center;
   height: 100px;
   width: 100%;
-  background-color: #404040;
-  color: white;
+  background-color: #a6a6a6;
+  color: #0d0d0d;
   margin-bottom: 4rem;
 }
 
-.sidenav__account--user-picture {
+.sidenav__account--dark {
+  background-color: #404040;
+  color: white;
+}
+
+.sidenav__account-user-picture {
   height: 70px;
   width: 70px;
   border-radius: 50%;
+  border: 3px solid black;
+}
+
+.sidenav__account-user-picture--dark {
   border: 3px solid white;
 }
 
@@ -50,24 +142,36 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  color: white;
+  color: black;
   width: 100%;
   margin: 0 0 1rem 3rem;
 }
+.sidenav__nav-categories-title--dark {
+  color: white;
+}
+
 .sidenav__nav-selected-country {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: white;
+  color: black;
   margin: 0 0 1.5rem 3rem;
 }
 
-.sidenav__nav-selected-country--flag {
+.sidenav__nav-selected-country--dark {
+  color: white;
+}
+
+.sidenav__nav-selected-country-flag {
   height: 30px;
   width: 30px;
   border-radius: 50%;
-  margin-right: 4rem;
-  border: 1.5px solid white;
+  margin-right: 3.7rem;
+  border: 2px solid black;
+}
+
+.sidenav__nav-selected-country-flag--dark {
+  border: 2px solid white;
 }
 
 .sidenav__list {

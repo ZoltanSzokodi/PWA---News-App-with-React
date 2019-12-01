@@ -1,6 +1,12 @@
 .main {
   grid-area: main;
   background-color: white;
+  transition: 0.8s;
+}
+
+.main--dark {
+  background-color: #a6a6a6;
+  background-image: linear-gradient(to left, #e3e4e6, #0d0d0d);
 }
 
 .main-header {

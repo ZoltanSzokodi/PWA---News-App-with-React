@@ -7,7 +7,7 @@
   margin-top: -200px;
   margin-left: -200px;
   border-radius: 50%;
-  background: #fff;
+  background: transparent;
 }
 
 .center {
@@ -29,8 +29,8 @@
   border-radius: 50%;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
-  -webkit-animation: jump-jump-1 1.8s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
-  animation: jump-jump-1 1.8s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
+  -webkit-animation: jump-jump-1 1s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
+  animation: jump-jump-1 1s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
 }
 
 .dot-2 {
@@ -44,8 +44,8 @@
   border-radius: 50%;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
-  -webkit-animation: jump-jump-2 1.8s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
-  animation: jump-jump-2 1.8s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
+  -webkit-animation: jump-jump-2 1s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
+  animation: jump-jump-2 1s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
 }
 
 .dot-3 {
@@ -59,8 +59,8 @@
   border-radius: 50%;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
-  -webkit-animation: jump-jump-3 1.8s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
-  animation: jump-jump-3 1.8s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
+  -webkit-animation: jump-jump-3 1s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
+  animation: jump-jump-3 1s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
 }
 
 .frame h3 {
