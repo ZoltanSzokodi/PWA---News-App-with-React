@@ -25,7 +25,7 @@
   height: 3rem;
   top: 9.5rem;
   left: 9.5rem;
-  background: var(--gray-3);
+  background: var(--gray-1);
   border-radius: 50%;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
@@ -55,7 +55,7 @@
   height: 9rem;
   top: 6.5rem;
   left: 6.5rem;
-  background: var(--gray-1);
+  background: var(--gray-3);
   border-radius: 50%;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
