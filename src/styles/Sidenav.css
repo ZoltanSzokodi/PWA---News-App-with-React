@@ -10,7 +10,7 @@
   transform: translateX(-24.5rem);
   transition: all 0.6s ease-in-out;
   font-size: 1.8rem;
-  z-index: 200; /* Needs to sit above the hamburger menu icon */
+  z-index: 201; /* Needs to sit above the hamburger menu icon */
   background-color: var(--gray-2);
   overflow: hidden;
 }

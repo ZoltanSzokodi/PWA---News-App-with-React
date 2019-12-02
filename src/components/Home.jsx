@@ -5,7 +5,7 @@ import Header from './Header'
 import Sidenav from './Sidenav'
 import Main from './Main'
 import Footer from './Footer'
-import '../styles/Home.css';
+import '../styles/Home.css'
 
 
 function Home() {
