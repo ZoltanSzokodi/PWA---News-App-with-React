@@ -1,9 +1,9 @@
 import React from 'react'
 import Flag from './Flag'
-import flagsArr from '../data/flagsArr'
+import { flagsArr } from '../functions/helpers'
 import '../styles/MainFlags.css'
 
-function MainFlags(props) {
+function MainFlags({ handleCountrySelect }) {
   return (
     <div className="main-flags-wrapper">
       {/* render the flag images */}
@@ -12,7 +12,7 @@ function MainFlags(props) {
           <Flag
             key={flag.country}
             flag={flag}
-            handleCountrySelect={props.handleCountrySelect} />
+            handleCountrySelect={handleCountrySelect} />
         ))}
       </div>
     </div>

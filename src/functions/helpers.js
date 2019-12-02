@@ -17,7 +17,8 @@ import gr from '../img/gr.svg'
 import hk from '../img/hk.svg'
 import ind from '../img/in.svg'
 
-const flagsArr = [
+// array for the country select
+export const flagsArr = [
   { src: de, country: "de" },
   { src: fr, country: "fr" },
   { src: gb, country: "gb" },
@@ -38,4 +39,37 @@ const flagsArr = [
   { src: ind, country: "in" }
 ];
 
-export default flagsArr;
+// getting rid of unvanted chars in publishedAt str
+export const publishTime = time => {
+  let published = time.split("");
+  published.map((char, i) => {
+    if (char === "T" || char === "Z") {
+      published.splice(i, 1, " ")
+    }
+  })
+  return published;
+};
+
+// toggle classes according to darkMode
+export const toggleClassesWdarkMode = (mode, className) => {
+  if (mode) {
+    return `${className} ${className}--dark`;
+  } else {
+    return className;
+  }
+};
+
+// toggle combinations of sidenav acive state and darkMode
+export const toggleClassesActiveAndDarkMode = (menuSt, mode) => {
+  let classes;
+  if (menuSt && mode) {
+    classes = "sidenav active sidenav--dark";
+  } else if (!menuSt && mode) {
+    classes = "sidenav sidenav--dark";
+  } else if (menuSt && !mode) {
+    classes = "sidenav active";
+  } else if (!menuSt && !mode) {
+    classes = "sidenav";
+  }
+  return classes;
+};

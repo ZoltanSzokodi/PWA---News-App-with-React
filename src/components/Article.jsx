@@ -1,5 +1,6 @@
 import React from 'react'
 import '../styles/Article.css'
+import { toggleClassesWdarkMode } from '../functions/helpers'
 
 function Article(props) {
   const {
@@ -15,7 +16,7 @@ function Article(props) {
   const displayImage = urlToImage !== null && <img className="article-image" src={urlToImage} alt="banner" />
 
   return (
-    <div className={darkMode ? "article article--dark" : "article"} onClick={() => handleArticleSelect(uuid)}>
+    <div className={toggleClassesWdarkMode(darkMode, "article")} onClick={() => handleArticleSelect(uuid)}>
       {displayImage}
       <h2 className="article-h2">{title}</h2>
       <h3 className="article-h3">{description}</h3>

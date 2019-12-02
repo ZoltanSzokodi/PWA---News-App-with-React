@@ -3,6 +3,7 @@ import MainFlags from './MainFlags'
 import ArticleContent from './ArticleContent'
 import Article from './Article'
 import Loader from './Loader'
+import { toggleClassesWdarkMode } from '../functions/helpers'
 import '../styles/Main.css'
 
 function Main(props) {
@@ -48,7 +49,7 @@ function Main(props) {
   }
 
   return (
-    <main className={darkMode ? "main main--dark" : "main"}>
+    <main className={toggleClassesWdarkMode(darkMode, "main")}>
       {/* on page load first show the loader/spinner (3s) */}
       {isLoading ? <Loader /> : renderArticles()}
     </main >

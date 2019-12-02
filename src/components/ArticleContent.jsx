@@ -1,5 +1,6 @@
 import React from 'react'
 import '../styles/ArticleContent.css'
+import { publishTime, toggleClassesWdarkMode } from '../functions/helpers'
 
 function ArticleContent(props) {
   const { handleGoBack, darkMode } = props;
@@ -11,24 +12,16 @@ function ArticleContent(props) {
     content
   } = props.selectedArticle;
 
-  // getting rid of unvanted chars in publishedAt str
-  const published = publishedAt.split("");
-  published.map((char, i) => {
-    if (char === "T" || char === "Z") {
-      published.splice(i, 1, " ")
-    }
-  })
-
   return (
-    <div className={darkMode ? "article__content article__content--dark" : "article__content"}>
-      <div className={darkMode ? "article__content__hide article__content__hide--dark" : "article__content__hide"}>
+    <div className={toggleClassesWdarkMode(darkMode, "article__content")}>
+      <div className={toggleClassesWdarkMode(darkMode, "article__content__hide")}>
         <h3 className="article__content__hide-message">Please sign in to read full article</h3>
         <button onClick={handleGoBack}>Go Back</button>
       </div>
       <img className="article__content-image" src={urlToImage} alt="article" />
-      <div className={darkMode ? "article__content-details article__content-details--dark" : "article__content-details"}>
+      <div className={toggleClassesWdarkMode(darkMode, "article__content-details")}>
         <span>{author}</span>
-        <span>{published}</span>
+        <span>{publishTime(publishedAt)}</span>
       </div>
       <h2 className="article__content-title">{title}</h2>
       <p className="article__content-real">{content}</p>
@@ -39,7 +32,7 @@ function ArticleContent(props) {
         I have a dream that one day on the red hills of Georgia, the sons of former slaves and the sons of former slave owners will be able to sit down together at the table of brotherhood.
         I have a dream that one day even the state of Mississippi, a state sweltering with the heat of injustice, sweltering with the heat of oppression, will be transformed into an oasis of freedom and justice.
         <br /><br />
-        <span className={darkMode ? "article__content-important article__content-important--dark" : "article__content-important"}>I have a dream that one day every valley shall be exalted, and every hill and mountain shall be made low, the rough places will be made plain, and the crooked    places will be made straight; "and the glory of the Lord shall be revealed and all flesh shall see it  together."</span>
+        <span className={toggleClassesWdarkMode(darkMode, "article__content-important")}>I have a dream that one day every valley shall be exalted, and every hill and mountain shall be made low, the rough places will be made plain, and the crooked    places will be made straight; "and the glory of the Lord shall be revealed and all flesh shall see it  together."</span>
         <br /><br />
         I have a dream that my four little children will one day live in a nation where they will not be judged by the color of their skin but by the content of their character.
         I have a dream today!
@@ -68,7 +61,7 @@ function ArticleContent(props) {
         Free at last! Free at last!
         Thank God Almighty, we are free at last!
         <br /><br />
-        <span className={darkMode ? "article__content-important article__content-important--dark" : "article__content-important"}>I have a dream that one day on the red hills of Georgia, the sons of former slaves and the sons of former slave owners will be able to sit down together at the table of brotherhood.</span>
+        <span className={toggleClassesWdarkMode(darkMode, "article__content-important")}>I have a dream that one day on the red hills of Georgia, the sons of former slaves and the sons of former slave owners will be able to sit down together at the table of brotherhood.</span>
         <br /><br />
         Let us not wallow in the valley of despair, I say to you today, my frie
         And so even though we face the difficulties of today and tomorrow, I still have a dream. It is a dream deeply rooted in the American dream.

@@ -2,30 +2,30 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 400px;
-  height: 400px;
-  margin-top: -200px;
-  margin-left: -200px;
+  width: 40rem;
+  height: 40rem;
+  margin-top: -20rem;
+  margin-left: -20rem;
   border-radius: 50%;
   background: transparent;
 }
 
 .center {
   position: absolute;
-  width: 220px;
-  height: 220px;
-  top: 90px;
-  left: 90px;
+  width: 22rem;
+  height: 22rem;
+  top: 9rem;
+  left: 9rem;
 }
 
 .dot-1 {
   position: absolute;
   z-index: 3;
-  width: 30px;
-  height: 30px;
-  top: 95px;
-  left: 95px;
-  background: #e0e0e0;
+  width: 3rem;
+  height: 3rem;
+  top: 9.5rem;
+  left: 9.5rem;
+  background: var(--gray-3);
   border-radius: 50%;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
@@ -36,11 +36,11 @@
 .dot-2 {
   position: absolute;
   z-index: 2;
-  width: 60px;
-  height: 60px;
-  top: 80px;
-  left: 80px;
-  background: #e8e8e8;
+  width: 6rem;
+  height: 6rem;
+  top: 8rem;
+  left: 8rem;
+  background: var(--gray-2);
   border-radius: 50%;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
@@ -51,11 +51,11 @@
 .dot-3 {
   position: absolute;
   z-index: 1;
-  width: 90px;
-  height: 90px;
-  top: 65px;
-  left: 65px;
-  background: #f0f0f0;
+  width: 9rem;
+  height: 9rem;
+  top: 6.5rem;
+  left: 6.5rem;
+  background: var(--gray-1);
   border-radius: 50%;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
@@ -65,8 +65,8 @@
 
 .frame h3 {
   position: absolute;
-  top: 260px;
-  left: 155px;
+  top: 26rem;
+  left: 15.5rem;
 }
 
 @-webkit-keyframes jump-jump-1 {

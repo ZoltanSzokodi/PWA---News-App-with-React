@@ -4,20 +4,20 @@
   flex-direction: column;
   justify-content: flex-start;
   height: 100%;
-  width: 240px;
+  width: 24rem;
   position: fixed;
   overflow-y: auto;
-  transform: translateX(-245px);
+  transform: translateX(-24.5rem);
   transition: all 0.6s ease-in-out;
   font-size: 1.8rem;
   z-index: 200; /* Needs to sit above the hamburger menu icon */
-  background-color: #e9eaeb;
+  background-color: var(--gray-2);
   overflow: hidden;
 }
 
 .sidenav--dark {
-  background-color: #0d0d0d;
-  color: white;
+  background-color: var(--gray-8);
+  color: var(--gray-0);
 }
 
 .sidenav.active {
@@ -27,15 +27,15 @@
 .sidenav__close-icon {
   position: absolute;
   visibility: visible;
-  top: 8px;
-  right: 12px;
+  top: 0.8rem;
+  right: 1.2rem;
   cursor: pointer;
-  font-size: 20px;
-  color: #0d0d0d;
+  font-size: 2rem;
+  color: var(--gray-8);
 }
 
 .sidenav__close-icon--dark {
-  color: #ddd;
+  color: var(--gray-3);
 }
 
 /* ------------------------ DARK MODE SWITCH ------------------------- */
@@ -71,7 +71,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: black;
+  background-color: var(--gray-8);
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
@@ -79,32 +79,32 @@
 .slider:before {
   position: absolute;
   content: "";
-  height: 20px;
-  width: 20px;
+  height: 2rem;
+  width: 2rem;
   left: 4px;
   bottom: 4px;
-  background-color: white;
+  background-color: var(--gray-0);
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
 input:checked + .slider {
-  background-color: #ccc;
+  background-color: var(--gray-5);
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px black;
+  box-shadow: 0 0 1px var(--gray-8);
 }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
+  -webkit-transform: translateX(2.6rem);
+  -ms-transform: translateX(2.6rem);
+  transform: translateX(2.6rem);
 }
 
 /* Rounded sliders */
 .slider.round {
-  border-radius: 34px;
+  border-radius: 3.4rem;
 }
 
 .slider.round:before {
@@ -116,63 +116,62 @@ input:checked + .slider:before {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  height: 100px;
+  height: 10rem;
   width: 100%;
-  background-color: #a6a6a6;
-  color: #0d0d0d;
+  background-color: var(--gray-5);
+  color: var(--gray-8);
   margin-bottom: 4rem;
 }
 
 .sidenav__account--dark {
-  background-color: #404040;
-  color: white;
+  background-color: var(--gray-7);
+  color: var(--gray-0);
 }
 
 .sidenav__account-user-picture {
-  height: 70px;
-  width: 70px;
+  height: 7rem;
+  width: 7rem;
   border-radius: 50%;
-  border: 3px solid black;
+  border: 3px solid var(--gray-8);
 }
 
 .sidenav__account-user-picture--dark {
-  border: 3px solid white;
+  border: 3px solid var(--gray-0);
 }
 
 .sidenav__nav-categories-title {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  color: black;
+  color: var(--gray-8);
   width: 100%;
   margin: 0 0 1rem 3rem;
 }
 .sidenav__nav-categories-title--dark {
-  color: white;
+  color: var(--gray-0);
 }
 
 .sidenav__nav-selected-country {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: black;
+  color: var(--gray-8);
   margin: 0 0 1.5rem 3rem;
 }
 
 .sidenav__nav-selected-country--dark {
-  color: white;
+  color: var(--gray-0);
 }
 
 .sidenav__nav-selected-country-flag {
-  height: 30px;
-  width: 30px;
+  height: 3rem;
+  width: 3rem;
   border-radius: 50%;
   margin-right: 3.7rem;
 }
 
 .sidenav__list {
   padding: 0;
-  /* margin-top: 85px; */
   list-style-type: none;
 }
 

@@ -1,11 +1,11 @@
 .flag {
-  width: 50px;
-  height: 50px;
-  border-radius: 50rem;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
   margin: 2rem;
   cursor: pointer;
   transition: 0.3s;
-  filter: grayscale(50%);
+  filter: grayscale(30%);
 }
 
 .flag:hover {

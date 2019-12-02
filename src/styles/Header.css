@@ -4,28 +4,28 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 16px;
-  background-color: white;
+  padding: 0 1.6rem;
+  background-color: var(--gray-0);
   transition: 0.8s;
 }
 
 .header--dark {
-  background-image: linear-gradient(to left, #e3e4e6, #404040);
-  color: white;
+  background-image: linear-gradient(to left, var(--gray-3), var(--gray-7));
+  color: var(--gray-0);
 }
 
 /* Make room for the menu icon on mobile */
 .header__search {
-  margin-left: 42px;
+  margin-left: 4.2rem;
 }
 
 .header__signin {
   height: 100%;
-  width: 100px;
+  width: 10rem;
 }
 
 /* Non-mobile styles, 750px breakpoint */
-@media only screen and (min-width: 46.875em) {
+@media only screen and (min-width: 75rem) {
   .header__search {
     margin-left: 0;
   }

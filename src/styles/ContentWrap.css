@@ -2,7 +2,7 @@
 .grid-container {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 60px 1fr 60px;
+  grid-template-rows: 6rem 1fr 6rem;
   grid-template-areas:
     "header"
     "main"
@@ -15,7 +15,7 @@
 @media only screen and (min-width: 75rem) {
   /* Show the sidenav */
   .grid-container {
-    grid-template-columns: 240px 1fr;
+    grid-template-columns: 24rem 1fr;
     grid-template-areas:
       "sidenav header"
       "sidenav main"

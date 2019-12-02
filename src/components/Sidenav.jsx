@@ -1,7 +1,8 @@
 import React from 'react'
 import SidenavListItem from './SidenavListItem'
-import '../styles/Sidenav.css'
 import userPicture from '../img/30.jpg'
+import { toggleClassesActiveAndDarkMode, toggleClassesWdarkMode } from '../functions/helpers'
+import '../styles/Sidenav.css'
 
 function Sidenav(props) {
   const sidenavOptions = ["All", "Business", "Entertainment", "Health", "Science", "Sports", "Technology"];
@@ -14,29 +15,17 @@ function Sidenav(props) {
     darkMode
   } = props;
 
-  const toggleClasses = () => {
-    let classes;
-    if (menuState && darkMode) {
-      classes = "sidenav active sidenav--dark";
-    } else if (!menuState && darkMode) {
-      classes = "sidenav sidenav--dark";
-    } else if (menuState && !darkMode) {
-      classes = "sidenav active";
-    } else if (!menuState && !darkMode) {
-      classes = "sidenav";
-    }
-    return classes;
-  }
+
   // { darkMode ? "sidenav__close-icon sidenav__close-icon--dark" : "sidenav__close-icon" }
   return (
     // toggle menu according to menuStae
-    <aside className={toggleClasses()}>
-      <div className={darkMode ? "sidenav__close-icon sidenav__close-icon--dark" : "sidenav__close-icon"} onClick={handleToggleMenu}>
+    <aside className={toggleClassesActiveAndDarkMode(menuState, darkMode)}>
+      <div className={toggleClassesWdarkMode(darkMode, "sidenav__close-icon")} onClick={handleToggleMenu}>
         <i className="fas fa-times"></i>
       </div>
 
-      <div className={darkMode ? "sidenav__account sidenav__account--dark" : "sidenav__account"}>
-        <img className={darkMode ? "sidenav__account-user-picture sidenav__account-user-picture--dark" : "sidenav__account-user-picture"} src={userPicture} alt="user" />
+      <div className={toggleClassesWdarkMode(darkMode, "sidenav__account")}>
+        <img className={toggleClassesWdarkMode(darkMode, "sidenav__account-user-picture")} src={userPicture} alt="user" />
         <span>Ben Smith</span>
       </div>
 
@@ -54,7 +43,7 @@ function Sidenav(props) {
         <img className="sidenav__nav-selected-country-flag" src={selectedCountry.src} alt={selectedCountry.country} />
       </div>
 
-      <div className={darkMode ? "sidenav__nav-categories-title sidenav__nav-categories-title--dark" : "sidenav__nav-categories-title"}>
+      <div className={toggleClassesWdarkMode(darkMode, "sidenav__nav-categories-title")}>
         <h4>Categories <i className="fas fa-sort-down"></i></h4>
       </div>
 
