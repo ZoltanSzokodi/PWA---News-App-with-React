@@ -1,16 +1,14 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { AuthContext } from '../Auth'
+import React, { useEffect, useState } from 'react'
 import { uuid } from 'uuidv4';
 import ContentWrap from './ContentWrap'
 import Header from './Header'
 import Sidenav from './Sidenav'
 import Main from './Main'
 import Footer from './Footer'
+import '../styles/Home.css';
 
 
 function Home() {
-  const { currentUser } = useContext(AuthContext);
-
   const [articlesArr, setArticlesArr] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [selectedArticle, setSelectedArticle] = useState(null);
@@ -95,8 +93,6 @@ function Home() {
   const handleToggleDarkMode = () => {
     setDarkMode(!darkMode)
   };
-
-  console.log(currentUser)
 
   return (
     <ContentWrap>

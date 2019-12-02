@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { toggleClassesWdarkMode } from '../functions/helpers'
 import { AuthContext } from '../Auth'
-import app from '../base';
+import app from '../firebase';
 import '../styles/Header.css'
 
 function Header({ darkMode }) {
