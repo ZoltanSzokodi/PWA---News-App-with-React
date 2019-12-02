@@ -17,13 +17,14 @@ html {
 :root {
   --transparent: rgba(255, 255, 255, 0);
   --gray-0: #fff;
-  --gray-1: #f2f2f2;
-  --gray-2: #e8e9ea;
-  --gray-3: #e3e4e6;
-  --gray-4: #dadae3;
+  --gray-1: #eee;
+  --gray-2: #ddd;
+  --gray-3: #ccc;
+  --gray-4: #bcbcbc;
 
   --gray-5: #a6a6a6;
-  --gray-6: #737373;
-  --gray-7: #404040;
-  --gray-8: #0d0d0d;
+  --gray-6: #7c7c7c;
+  --gray-7: #545454;
+  --gray-8: #303030;
+  --gray-9: #0d0d0d;
 }

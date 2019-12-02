@@ -26,7 +26,7 @@
 }
 
 .article__content__hide--dark {
-  background: linear-gradient(to bottom, var(--transparent) 25%, var(--gray-8) 50%);
+  background: linear-gradient(to bottom, var(--transparent) 25%, var(--gray-9) 50%);
 }
 
 .article__content-image {
@@ -51,7 +51,7 @@
 }
 
 .article__content-title {
-  background-color: black;
+  background-color: var(--gray-9);
   color: var(--gray-0);
   margin-bottom: 4rem;
 }
@@ -64,7 +64,7 @@
 
 .article__content-important {
   background-color: var(--gray-3);
-  color: var(--gray-8);
+  color: var(--gray-9);
   font-weight: bold;
   text-transform: uppercase;
   line-height: 4rem;
