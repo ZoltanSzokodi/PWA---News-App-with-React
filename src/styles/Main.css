@@ -9,11 +9,20 @@
 }
 
 .main-header {
-  display: flex;
-  justify-content: space-between;
-  padding: 2rem;
-  height: 30rem;
-  background-color: var(--gray-3);
+  /* display: flex; */
+  /* justify-content: flex-start; */
+  /* height: auto; */
+  background-color: var(--transparent);
+}
+
+.banner-video {
+  max-width: 100%;
+  max-height: 100%;
+  filter: grayscale(100%);
+}
+
+.banner-video--dark {
+  filter: brightness(70%);
 }
 
 .main-articles {
@@ -33,12 +42,6 @@
 .card:nth-child(3) {
   height: 265px;
 } */
-/* Non-mobile styles, 750px breakpoint */
-@media only screen and (min-width: 46.875em) {
-  .main-header {
-    margin: 20px;
-  }
-}
 
 /* Medium screens breakpoint (1050px) */
 @media only screen and (min-width: 65.625em) {
