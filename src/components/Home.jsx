@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { uuid } from 'uuidv4';
+import { ThemeProvider } from '../context/ThemeContext'
 import ContentWrap from './ContentWrap'
 import Header from './Header'
 import Sidenav from './Sidenav'
@@ -15,15 +16,16 @@ function Home() {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedCountry, setSelectedCountry] = useState({ src: '/static/media/us.f4cc0b5e.svg', country: "us" });
   const [menuState, setMenuState] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
+  const [searchKeyword, setSearchKeyword] = useState('');
 
-  // ********************************** FETCH DATA ***********************************
+  // ********************************** FETCH TOP HEADLINES ***********************************
 
   useEffect(() => {
-    const getHeadlines = async (country, category) => {
+    const getHeadlines = async (country, category, srckey) => {
       const APIKey = '1f9659798f1841bb962c9bc56cc559a2';
       const categ = category !== 'all' ? '&category=' + category : '';
-      const url = `https://newsapi.org/v2/top-headlines?country=${country}${categ}`;
+      const srck = srckey !== null ? 'q=' + srckey + '&' : '';
+      const url = `https://newsapi.org/v2/top-headlines?${srck}country=${country}${categ}`;
       const headers = { "X-Api-Key": APIKey };
 
       try {
@@ -39,8 +41,9 @@ function Home() {
 
       } catch (err) { console.log(err) }
     }
-    getHeadlines(selectedCountry.country, selectedCategory)
-  }, [selectedCountry, selectedCategory])
+    getHeadlines(selectedCountry.country, selectedCategory, searchKeyword)
+  }, [selectedCountry, selectedCategory, searchKeyword])
+
 
   // when opening an article jump to the top os the page
   useEffect(() => {
@@ -51,7 +54,7 @@ function Home() {
   useEffect(() => {
     setIsLoading(true)
     setTimeout(() => { setIsLoading(false) }, 1500);
-  }, [selectedCategory, selectedCountry])
+  }, [selectedCategory, selectedCountry, searchKeyword])
 
   // *************************** EVENT LISTENERS **********************************
 
@@ -90,37 +93,39 @@ function Home() {
     setMenuState(!menuState)
   };
 
-  // ------------------------ TOGGLE DARK MODE ---------------------------------
-  const handleToggleDarkMode = () => {
-    setDarkMode(!darkMode)
-  };
+  // ------------------------ HANDLE SEARCH ---------------------------------------
+  const handleSearch = e => {
+    setSearchKeyword(e.target.value)
+    setSelectedArticle(null)
+  }
+
+  console.log(searchKeyword)
 
   return (
-    <ContentWrap>
-      <div className="menu-icon" onClick={handleToggleMenu}>
-        <i className="fas fa-bars header__menu"></i>
-      </div>
-      <Header darkMode={darkMode} />
-      <Sidenav
-        handleCategorySelect={handleCategorySelect}
-        handleToggleDarkMode={handleToggleDarkMode}
-        handleToggleMenu={handleToggleMenu}
-        menuState={menuState}
-        selectedCountry={selectedCountry}
-        darkMode={darkMode}
-      />
+    <ThemeProvider>
+      <ContentWrap>
+        <div className="menu-icon" onClick={handleToggleMenu}>
+          <i className="fas fa-bars header__menu"></i>
+        </div>
+        <Header handleSearch={handleSearch} />
+        <Sidenav
+          handleCategorySelect={handleCategorySelect}
+          handleToggleMenu={handleToggleMenu}
+          menuState={menuState}
+          selectedCountry={selectedCountry}
+        />
 
-      <Main
-        handleArticleSelect={handleArticleSelect}
-        handleGoBack={handleGoBack}
-        handleCountrySelect={handleCountrySelect}
-        articlesArr={articlesArr}
-        selectedArticle={selectedArticle}
-        isLoading={isLoading}
-        darkMode={darkMode}
-      />
-      <Footer darkMode={darkMode} />
-    </ContentWrap>
+        <Main
+          handleArticleSelect={handleArticleSelect}
+          handleGoBack={handleGoBack}
+          handleCountrySelect={handleCountrySelect}
+          articlesArr={articlesArr}
+          selectedArticle={selectedArticle}
+          isLoading={isLoading}
+        />
+        <Footer />
+      </ContentWrap>
+    </ThemeProvider>
   )
 }
 

@@ -1,8 +1,11 @@
-import React from 'react'
-import '../styles/Footer.css'
+import React, { useContext } from 'react'
 import { toggleClassesWdarkMode } from '../functions/helpers'
+import { ThemeContext } from '../context/ThemeContext'
+import '../styles/Footer.css'
 
-function Footer({ darkMode }) {
+function Footer() {
+  const { darkMode } = useContext(ThemeContext);
+
   return (
     <footer className={toggleClassesWdarkMode(darkMode, "footer")}>
       <div className="footer__copyright">&copy; 2020 Zszokodi</div>

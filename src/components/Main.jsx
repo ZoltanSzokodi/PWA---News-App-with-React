@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { toggleClassesWdarkMode } from '../functions/helpers'
+import { ThemeContext } from '../context/ThemeContext'
 import MainFlags from './MainFlags'
 import ArticleContent from './ArticleContent'
 import Article from './Article'
 import Loader from './Loader'
-import { toggleClassesWdarkMode } from '../functions/helpers'
 import '../styles/Main.css'
 
 function Main(props) {
@@ -13,9 +14,10 @@ function Main(props) {
     handleGoBack,
     articlesArr,
     selectedArticle,
-    isLoading,
-    darkMode
+    isLoading
   } = props;
+
+  const { darkMode } = useContext(ThemeContext);
 
   const allArticles = (
     <React.Fragment>
@@ -33,7 +35,6 @@ function Main(props) {
             key={article.uuid}
             article={article}
             handleArticleSelect={handleArticleSelect}
-            darkMode={darkMode}
           />
         ))}
       </div>
@@ -41,7 +42,7 @@ function Main(props) {
   );
 
   // single article that has been clicked on
-  const oneArticle = <ArticleContent selectedArticle={selectedArticle} handleGoBack={handleGoBack} darkMode={darkMode} />
+  const oneArticle = <ArticleContent selectedArticle={selectedArticle} handleGoBack={handleGoBack} />
 
   // if an article was clicked on render that article, else render all the articles
   const renderArticles = () => {

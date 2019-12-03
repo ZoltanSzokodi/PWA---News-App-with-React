@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { toggleClassesActiveAndDarkMode, toggleClassesWdarkMode } from '../functions/helpers'
+import { ThemeContext } from '../context/ThemeContext'
 import SidenavListItem from './SidenavListItem'
 import userPicture from '../img/30.jpg'
-import { toggleClassesActiveAndDarkMode, toggleClassesWdarkMode } from '../functions/helpers'
 import '../styles/Sidenav.css'
 
 function Sidenav(props) {
@@ -9,12 +10,11 @@ function Sidenav(props) {
   const {
     menuState,
     handleToggleMenu,
-    handleToggleDarkMode,
     handleCategorySelect,
-    selectedCountry,
-    darkMode
+    selectedCountry
   } = props;
 
+  const { darkMode, handleToggleDarkMode } = useContext(ThemeContext);
 
   // { darkMode ? "sidenav__close-icon sidenav__close-icon--dark" : "sidenav__close-icon" }
   return (
@@ -54,7 +54,6 @@ function Sidenav(props) {
             key={option}
             id={option}
             handleCategorySelect={handleCategorySelect}
-            darkMode={darkMode}
           />
         ))}
       </ul>

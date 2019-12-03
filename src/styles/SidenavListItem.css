@@ -11,16 +11,10 @@
 .sidenav__list-item:hover {
   background-color: var(--gray-5);
   cursor: pointer;
+  color: white;
   transform: scale(1.1);
 }
 
 .sidenav__list-item--dark:hover {
   background-color: var(--gray-7);
-}
-
-/* Non-mobile styles, 750px breakpoint */
-@media only screen and (min-width: 750px) {
-  /* .sidenav__list-item {
-    transform: translateX(0);
-  } */
 }

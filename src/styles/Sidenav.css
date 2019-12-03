@@ -42,12 +42,9 @@
 
 /* ------------------------ DARK MODE SWITCH ------------------------- */
 .sidenav__switch {
-  /* width: 100%; */
   display: flex;
-  /* justify-content: flex-start; */
   justify-content: center;
   align-items: center;
-  /* margin: 0 0 1rem 3rem; */
   margin-bottom: 1.5rem;
 }
 

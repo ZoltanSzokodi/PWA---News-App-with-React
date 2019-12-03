@@ -1,10 +1,10 @@
 import React, { useContext } from 'react'
 import { publishTime, toggleClassesWdarkMode } from '../functions/helpers'
-import { AuthContext } from '../Auth'
+import { AuthContext } from '../context/AuthContext'
+import { ThemeContext } from '../context/ThemeContext'
 import '../styles/ArticleContent.css'
 
 function ArticleContent(props) {
-  const { handleGoBack, darkMode } = props;
   const {
     urlToImage,
     author,
@@ -14,12 +14,13 @@ function ArticleContent(props) {
   } = props.selectedArticle;
 
   const { currentUser } = useContext(AuthContext);
+  const { darkMode } = useContext(ThemeContext);
 
   return (
     <div className={toggleClassesWdarkMode(darkMode, "article__content")}>
       <div className={toggleClassesWdarkMode(darkMode, "article__content__hide")} style={currentUser ? { display: "none" } : { display: "flex" }}>
         <h3 className="article__content__hide-message">Please sign in to read full article</h3>
-        <button onClick={handleGoBack}>Go Back</button>
+        <button onClick={props.handleGoBack}>Go Back</button>
       </div>
       <img className="article__content-image" src={urlToImage} alt="article" />
       <div className={toggleClassesWdarkMode(darkMode, "article__content-details")}>
@@ -166,7 +167,7 @@ function ArticleContent(props) {
         Thank God Almighty, we are free at last!
       </p>
 
-      <button onClick={handleGoBack}>Go Back</button>
+      <button onClick={props.handleGoBack}>Go Back</button>
     </div>
   );
 }
