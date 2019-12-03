@@ -42,6 +42,7 @@ function Home() {
       } catch (err) { console.log(err) }
     }
     getHeadlines(selectedCountry.country, selectedCategory, searchKeyword)
+    // in case these state props change go and fetch data again
   }, [selectedCountry, selectedCategory, searchKeyword])
 
 
@@ -50,13 +51,15 @@ function Home() {
     window.scrollTo(0, 0)
   }, [selectedArticle])
 
-  // show loader when selecting a country or category
+  // show loader when selecting a country, category or searching
   useEffect(() => {
     setIsLoading(true)
     setTimeout(() => { setIsLoading(false) }, 1500);
   }, [selectedCategory, selectedCountry, searchKeyword])
 
+
   // *************************** EVENT LISTENERS **********************************
+
 
   // ------------------------ CLICK AND OPEN AN ARTICLE ---------------------------
   const handleArticleSelect = id => {

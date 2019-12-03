@@ -6,23 +6,14 @@ import { ThemeContext } from '../context/ThemeContext'
 import app from '../firebase';
 import '../styles/Header.css'
 
-function Header(props) {
+function Header({ handleSearch }) {
   const { currentUser } = useContext(AuthContext);
   const { darkMode } = useContext(ThemeContext);
-
-  // const [searchInput, setSearchInput] = useState(null);
-
-  // const handleChange = e => {
-  //   setSearchInput(e.target.value)
-  // }
-
-  // console.log(currentUser)
 
   return (
     <header className={toggleClassesWdarkMode(darkMode, "header")}>
       <div className="header__search-container">
-        <input className="search-input" type="text" placeholder="Search.." name="search" onChange={props.handleSearch} />
-        {/* <button className="search-btn" onClick={() => props.handleSearch(searchInput)}><i className="fa fa-search"></i></button> */}
+        <input className="search-input" type="text" placeholder="Search.." name="search" onChange={handleSearch} />
       </div>
       <div className="header__login-out">
         {currentUser ?
