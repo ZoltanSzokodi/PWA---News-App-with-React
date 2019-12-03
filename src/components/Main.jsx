@@ -5,7 +5,7 @@ import MainFlags from './MainFlags'
 import ArticleContent from './ArticleContent'
 import Article from './Article'
 import Loader from './Loader'
-import bannerVideo from '../img/globe.mp4'
+import bannerVideo from '../img/globe-compressed.mp4'
 import '../styles/Main.css'
 
 function Main(props) {
