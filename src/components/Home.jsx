@@ -77,6 +77,7 @@ function Home() {
     setSelectedCategory(idLc)
     // when we are inside an article and we select a category from the sidenav this exits the article
     setSelectedArticle(null)
+    setMenuState(false)
   };
 
   // ------------------------ SELECT A COUNTRY ------------------------------------

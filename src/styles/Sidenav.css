@@ -3,13 +3,15 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  height: 100%;
-  width: 24rem;
+  align-items: center;
   position: fixed;
+  height: 100%;
+  width: 100%;
   overflow-y: auto;
-  transform: translateX(-24.5rem);
+  transform: translateX(-100%);
   transition: all 0.6s ease-in-out;
-  font-size: 1.8rem;
+  font-size: 2rem;
+  text-transform: uppercase;
   z-index: 201; /* Needs to sit above the hamburger menu icon */
   background-color: var(--gray-2);
   overflow: hidden;
@@ -27,10 +29,10 @@
 .sidenav__close-icon {
   position: absolute;
   visibility: visible;
-  top: 0.8rem;
-  right: 1.2rem;
+  top: 1.2rem;
+  right: 2rem;
   cursor: pointer;
-  font-size: 2rem;
+  font-size: 3rem;
   color: var(--gray-9);
 }
 
@@ -40,15 +42,17 @@
 
 /* ------------------------ DARK MODE SWITCH ------------------------- */
 .sidenav__switch {
-  width: 100%;
+  /* width: 100%; */
   display: flex;
-  justify-content: flex-start;
+  /* justify-content: flex-start; */
+  justify-content: center;
   align-items: center;
-  margin: 0 0 1rem 3rem;
+  /* margin: 0 0 1rem 3rem; */
+  margin-bottom: 1.5rem;
 }
 
 .sidenav__switch h4 {
-  margin-right: 4rem;
+  margin-right: 2.5rem;
 }
 
 .switch {
@@ -114,9 +118,8 @@ input:checked + .slider:before {
 
 .sidenav__account {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   align-items: center;
-  height: 10rem;
   width: 100%;
   background-color: var(--gray-4);
   color: var(--gray-9);
@@ -131,6 +134,7 @@ input:checked + .slider:before {
 .sidenav__account-user-picture {
   height: 7rem;
   width: 7rem;
+  margin-right: 1.5rem;
   border-radius: 50%;
   border: 3px solid var(--gray-9);
 }
@@ -139,46 +143,59 @@ input:checked + .slider:before {
   border: 3px solid var(--gray-0);
 }
 
-.sidenav__nav-categories-title {
+.sidenav__nav-selected-country {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  color: var(--gray-9);
-  width: 100%;
-  margin: 0 0 1rem 3rem;
-}
-.sidenav__nav-categories-title--dark {
-  color: var(--gray-0);
-}
-
-.sidenav__nav-selected-country {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: var(--gray-9);
-  margin: 0 0 1.5rem 3rem;
-}
-
-.sidenav__nav-selected-country--dark {
-  color: var(--gray-0);
 }
 
 .sidenav__nav-selected-country-flag {
   height: 3rem;
   width: 3rem;
   border-radius: 50%;
-  margin-right: 3.7rem;
+  margin-left: 3.7rem;
+}
+
+.sidenav__nav-categories-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--gray-9);
+  margin: 1.5rem 0 3.5rem;
+  transform: translateX(-3.4rem);
+}
+.sidenav__nav-categories-title--dark {
+  color: var(--gray-0);
 }
 
 .sidenav__list {
-  padding: 0;
+  width: 100%;
+  text-align: center;
   list-style-type: none;
 }
 
 /* Non-mobile styles, 750px breakpoint */
-@media only screen and (min-width: 75rem) {
+@media only screen and (min-width: 550px) {
   .sidenav {
-    /* position: fixed; */
+    width: 24rem;
+    font-size: 1.8rem;
+  }
+
+  .sidenav__close-icon {
+    font-size: 2rem;
+    top: 0.8rem;
+    right: 1.2rem;
+  }
+
+  .sidenav__list {
+    padding-left: 0rem;
+    text-align: left;
+  }
+}
+
+/* Non-mobile styles, 1050px breakpoint */
+@media only screen and (min-width: 1200px) {
+  .sidenav {
     transform: translateX(0);
   }
   .sidenav__close-icon {

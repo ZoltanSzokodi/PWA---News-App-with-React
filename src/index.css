@@ -9,9 +9,9 @@ html {
   font-family: "Noto Sans", sans-serif;
 }
 
-/* ::-webkit-scrollbar {
+::-webkit-scrollbar {
   display: none;
-} */
+}
 
 /* custom properties */
 :root {
