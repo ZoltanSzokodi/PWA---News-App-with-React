@@ -129,8 +129,10 @@ input:checked + .slider:before {
 }
 
 .sidenav__account-user-picture {
-  height: 7rem;
-  width: 7rem;
+  min-height: 7rem;
+  min-width: 7rem;
+  max-height: 7rem;
+  max-width: 7rem;
   margin-right: 1.5rem;
   border-radius: 50%;
   border: 3px solid var(--gray-9);

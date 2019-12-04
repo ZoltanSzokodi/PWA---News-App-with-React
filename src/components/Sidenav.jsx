@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { toggleClassesActiveAndDarkMode, toggleClassesWdarkMode } from '../functions/helpers'
 import { ThemeContext } from '../context/ThemeContext'
+import { AuthContext } from '../context/AuthContext'
 import SidenavListItem from './SidenavListItem'
 import userPicture from '../img/30.jpg'
 import '../styles/Sidenav.css'
@@ -15,8 +16,8 @@ function Sidenav(props) {
   } = props;
 
   const { darkMode, handleToggleDarkMode } = useContext(ThemeContext);
+  const { currentUser } = useContext(AuthContext);
 
-  // { darkMode ? "sidenav__close-icon sidenav__close-icon--dark" : "sidenav__close-icon" }
   return (
     // toggle menu according to menuStae
     <aside className={toggleClassesActiveAndDarkMode(menuState, darkMode)}>
@@ -25,8 +26,8 @@ function Sidenav(props) {
       </div>
 
       <div className={toggleClassesWdarkMode(darkMode, "sidenav__account")}>
-        <img className={toggleClassesWdarkMode(darkMode, "sidenav__account-user-picture")} src={userPicture} alt="user" />
-        <span>Ben Smith</span>
+        <img className={toggleClassesWdarkMode(darkMode, "sidenav__account-user-picture")} src={currentUser ? currentUser.photoURL : userPicture} alt="user" />
+        <span>{currentUser ? currentUser.displayName : "Please log in"}</span>
       </div>
 
       {/* toggle dark mode */}
