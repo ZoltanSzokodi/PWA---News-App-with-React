@@ -1,7 +1,9 @@
 import React, { useContext } from 'react'
+import { Link } from 'react-router-dom'
 import { toggleClassesActiveAndDarkMode, toggleClassesWdarkMode } from '../functions/helpers'
 import { ThemeContext } from '../context/ThemeContext'
 import { AuthContext } from '../context/AuthContext'
+import { config } from '../firebase';
 import SidenavListItem from './SidenavListItem'
 import userPicture from '../img/30.jpg'
 import '../styles/Sidenav.css'
@@ -27,10 +29,15 @@ function Sidenav(props) {
 
       <div className={toggleClassesWdarkMode(darkMode, "sidenav__account")}>
         <img className={toggleClassesWdarkMode(darkMode, "sidenav__account-user-picture")} src={currentUser ? currentUser.photoURL : userPicture} alt="user" />
-        <span>{currentUser ? currentUser.displayName : "Please log in"}</span>
+        <span className="sidenav__account-user-name">{currentUser ? " | " + currentUser.displayName : " | signed out"}</span>
       </div>
 
-      {/* toggle dark mode */}
+      <div className="sidenav__login-out">
+        {currentUser ? (
+          <Link className="sidenav__login-out-btn" to="/" onClick={() => config.auth().signOut()}>sign out</Link>) : (
+            <Link className="sidenav__login-out-btn" to="/login">sign in</Link>)}
+      </div>
+
       <div className="sidenav__switch">
         <h4>{darkMode ? "Light theme" : "Dark theme"}</h4>
         <label className="switch">
@@ -39,7 +46,7 @@ function Sidenav(props) {
         </label>
       </div>
 
-      <div className={darkMode ? "sidenav__nav-selected-country sidenav__nav-selected-country--dark" : "sidenav__nav-selected-country"}>
+      <div className={toggleClassesWdarkMode(darkMode, "sidenav__nav-selected-country")}>
         <h4>Country ({selectedCountry.country})</h4>
         <img className="sidenav__nav-selected-country-flag" src={selectedCountry.src} alt={selectedCountry.country} />
       </div>

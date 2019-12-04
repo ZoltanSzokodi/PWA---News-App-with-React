@@ -11,7 +11,6 @@
   transform: translateX(-100%);
   transition: all 0.6s ease-in-out;
   font-size: 2rem;
-  text-transform: uppercase;
   z-index: 201; /* Needs to sit above the hamburger menu icon */
   background-color: var(--gray-2);
   overflow: hidden;
@@ -40,12 +39,64 @@
   color: var(--gray-3);
 }
 
+.sidenav__account {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  background-color: var(--gray-4);
+  color: var(--gray-9);
+  margin-bottom: 4rem;
+}
+
+.sidenav__account--dark {
+  background-color: var(--gray-7);
+  color: var(--gray-0);
+}
+
+.sidenav__account-user-picture {
+  min-height: 7rem;
+  min-width: 7rem;
+  max-height: 7rem;
+  max-width: 7rem;
+  margin-right: 1.5rem;
+  border-radius: 50%;
+  border: 3px solid var(--gray-9);
+}
+
+.sidenav__account-user-name {
+  font-size: 1.8rem;
+}
+
+.sidenav__account-user-picture--dark {
+  border: 3px solid var(--gray-0);
+}
+
+.sidenav__login-out {
+  width: 100%;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+
+.sidenav__login-out-btn {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  color: var(--gray-0);
+  background-color: var(--gray-8);
+  padding: 1rem;
+  text-align: center;
+  font-size: 2rem;
+}
+
 /* ------------------------ DARK MODE SWITCH ------------------------- */
 .sidenav__switch {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 1.5rem;
+  text-transform: uppercase;
 }
 
 .sidenav__switch h4 {
@@ -113,39 +164,11 @@ input:checked + .slider:before {
 }
 /* ------------------------------------------------------------------- */
 
-.sidenav__account {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  width: 100%;
-  background-color: var(--gray-4);
-  color: var(--gray-9);
-  margin-bottom: 4rem;
-}
-
-.sidenav__account--dark {
-  background-color: var(--gray-7);
-  color: var(--gray-0);
-}
-
-.sidenav__account-user-picture {
-  min-height: 7rem;
-  min-width: 7rem;
-  max-height: 7rem;
-  max-width: 7rem;
-  margin-right: 1.5rem;
-  border-radius: 50%;
-  border: 3px solid var(--gray-9);
-}
-
-.sidenav__account-user-picture--dark {
-  border: 3px solid var(--gray-0);
-}
-
 .sidenav__nav-selected-country {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  text-transform: uppercase;
 }
 
 .sidenav__nav-selected-country-flag {
@@ -162,6 +185,7 @@ input:checked + .slider:before {
   color: var(--gray-9);
   margin: 1.5rem 0 3.5rem;
   transform: translateX(-3.4rem);
+  text-transform: uppercase;
 }
 .sidenav__nav-categories-title--dark {
   color: var(--gray-0);
@@ -171,6 +195,7 @@ input:checked + .slider:before {
   width: 100%;
   text-align: center;
   list-style-type: none;
+  text-transform: uppercase;
 }
 
 /* Non-mobile styles, 750px breakpoint */
@@ -178,6 +203,10 @@ input:checked + .slider:before {
   .sidenav {
     width: 24rem;
     font-size: 1.8rem;
+  }
+
+  .sidenav__login-out {
+    display: none;
   }
 
   .sidenav__close-icon {

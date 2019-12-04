@@ -15,6 +15,7 @@ function Header({ handleSearch }) {
       <div className="header__search-container">
         <input className="search-input" type="text" placeholder="Search.." name="search" onChange={handleSearch} />
       </div>
+
       <div className="header__login-out">
         {currentUser ? (
           <Link className="header__login-out-btn" to="/" onClick={() => config.auth().signOut()}>sign out</Link>) : (

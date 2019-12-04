@@ -1,7 +1,5 @@
-import React from 'react'
 import * as firebase from 'firebase/app'
 import 'firebase/auth'
-import Loader from './components/Loader'
 
 // initializing firebase app
 export const config = firebase.initializeApp({
@@ -25,9 +23,13 @@ export const uiConfig = {
     firebase.auth.GoogleAuthProvider.PROVIDER_ID,
     firebase.auth.FacebookAuthProvider.PROVIDER_ID,
     firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-    firebase.auth.EmailAuthProvider.PROVIDER_ID
+    firebase.auth.EmailAuthProvider.PROVIDER_ID,
+    {
+      provider: firebase.auth.PhoneAuthProvider.PROVIDER_ID,
+      defaultCountry: 'DE'
+    }
   ],
   callbacks: {
-    signInSuccess: () => false
+    signInSuccessWithAuthResult: () => false
   }
 };
