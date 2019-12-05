@@ -19,7 +19,7 @@ function Login() {
         ) : (
             <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={config.auth()} />
           )}
-        <Link className="login-goBack" to="/" ><i class="fas fa-angle-left"></i> Go back</Link>
+        <Link className="login-goBack" to="/" ><i className="fas fa-angle-left"></i> Go back</Link>
       </div>
     </div>
   )
