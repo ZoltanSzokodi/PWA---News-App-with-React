@@ -9,10 +9,12 @@
   box-sizing: border-box;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   margin: 2rem 2rem 2rem 0;
+  z-index: 2000;
 }
 
 .article:hover {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  /* transform: scale(1.01); */
 }
 
 .article--dark {

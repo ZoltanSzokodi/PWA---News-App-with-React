@@ -3,14 +3,13 @@
   display: flex;
   flex-direction: column;
   position: fixed;
-  height: 100%;
+  min-height: 100%;
   width: 100%;
   transform: translateX(-100%);
   transition: all 0.6s ease-in-out;
   font-size: 2rem;
   z-index: 201; /* Needs to sit above the hamburger menu icon */
   background-color: var(--color-light-4);
-  /* overflow: hidden; */
 }
 
 .sidenav--dark {

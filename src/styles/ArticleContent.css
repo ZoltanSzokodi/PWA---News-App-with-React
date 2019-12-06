@@ -19,7 +19,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  background: linear-gradient(to bottom, var(--transparent) 25%, var(--color-white) 50%);
+  background: linear-gradient(to bottom, var(--transparent) 25%, var(--color-light-4) 50%);
   height: 100%;
   width: 100%;
   z-index: 100;
@@ -42,7 +42,7 @@
   height: 5rem;
   padding: 1rem;
   font-size: 1rem;
-  background-color: var(--color-light-4);
+  background-color: var(--color-white);
 }
 
 .article__content-details--dark {

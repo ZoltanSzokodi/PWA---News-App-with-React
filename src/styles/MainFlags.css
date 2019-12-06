@@ -9,26 +9,27 @@
 .main-flags {
   display: flex;
   justify-content: flex-start;
-  width: 47.5rem;
+  /* width: 47.5rem; */
+  width: 100vw;
 }
 
 /* Non-mobile styles, 750px breakpoint */
 @media only screen and (min-width: 75rem) {
   .main-flags {
-    width: 75rem;
+    width: 70vw;
   }
 }
 
 /* Medium screens breakpoint (1050px) */
 @media only screen and (min-width: 105rem) {
   .main-flags {
-    width: 125rem;
+    /* width: 125rem; */
   }
 }
 
 /* Medium screens breakpoint (1550px) */
 @media only screen and (min-width: 155.5rem) {
   .main-flags {
-    width: 175rem;
+    /* width: 175rem; */
   }
 }

@@ -1,6 +1,5 @@
 .main {
   grid-area: main;
-  /* background-color: var(--color-light-4); */
   transition: 0.8s;
 }
 
@@ -9,20 +8,19 @@
 }
 
 .main-header {
-  /* display: flex; */
-  /* justify-content: flex-start; */
-  /* height: auto; */
+  display: flex;
+  justify-content: flex-start;
+  height: auto;
   background-color: var(--transparent);
 }
 
 .banner-video {
   max-width: 100%;
   max-height: 100%;
-  filter: grayscale(100%);
 }
 
 .banner-video--dark {
-  filter: brightness(70%);
+  filter: brightness(0%);
 }
 
 .main-articles {
