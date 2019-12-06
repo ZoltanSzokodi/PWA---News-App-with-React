@@ -108,7 +108,7 @@ function Home() {
     <ThemeProvider>
       <ContentWrap>
         <div className="menu-icon" onClick={handleToggleMenu}>
-          <i className="fas fa-bars header__menu"></i>
+          <i className="fas fa-bars menu-hamburger"></i>
         </div>
         <Header handleSearch={handleSearch} />
         <Sidenav
@@ -128,7 +128,7 @@ function Home() {
         />
         <Footer />
       </ContentWrap>
-    </ThemeProvider>
+    </ThemeProvider >
   )
 }
 

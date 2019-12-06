@@ -27,7 +27,7 @@ function ArticleContent(props) {
         <span>{author}</span>
         <span>{publishTime(publishedAt)}</span>
       </div>
-      <h2 className="article__content-title">{title}</h2>
+      <h2 className={toggleClassesWdarkMode(darkMode, "article__content-title")}>{title}</h2>
       <p className="article__content-real">{content}</p>
       <p className="article__content-fake">
         Let us not wallow in the valley of despair, I say to you today, my frie

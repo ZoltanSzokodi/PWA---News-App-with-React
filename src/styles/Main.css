@@ -1,11 +1,11 @@
 .main {
   grid-area: main;
-  background-color: var(--gray-1);
+  /* background-color: var(--color-light-4); */
   transition: 0.8s;
 }
 
 .main--dark {
-  background-color: var(--gray-6);
+  background-color: var(--color-dark-4);
 }
 
 .main-header {

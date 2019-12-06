@@ -5,7 +5,7 @@ import MainFlags from './MainFlags'
 import ArticleContent from './ArticleContent'
 import Article from './Article'
 import Loader from './Loader'
-import bannerVideo from '../img/globe-compressed.mp4'
+// import bannerVideo from '../img/globe-compressed.mp4'
 import '../styles/Main.css'
 
 function Main(props) {
@@ -23,9 +23,9 @@ function Main(props) {
   const allArticles = (
     <React.Fragment>
       <div className="main-header">
-        <video autoPlay muted loop className="banner-video">
+        {/* <video autoPlay muted loop className="banner-video">
           <source src={bannerVideo} type="video/mp4" />
-        </video>
+        </video> */}
       </div>
 
       <MainFlags handleCountrySelect={handleCountrySelect} />

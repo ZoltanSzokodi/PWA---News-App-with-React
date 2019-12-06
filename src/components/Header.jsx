@@ -1,13 +1,13 @@
 import React, { useContext } from 'react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import { toggleClassesWdarkMode } from '../functions/helpers'
-import { AuthContext } from '../context/AuthContext'
+// import { AuthContext } from '../context/AuthContext'
 import { ThemeContext } from '../context/ThemeContext'
-import { config } from '../firebase';
+// import { config } from '../firebase';
 import '../styles/Header.css'
 
 function Header({ handleSearch }) {
-  const { currentUser } = useContext(AuthContext);
+  // const { currentUser } = useContext(AuthContext);
   const { darkMode } = useContext(ThemeContext);
 
   return (

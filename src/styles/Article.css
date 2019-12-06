@@ -3,21 +3,27 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  background-color: var(--gray-0);
+  background-color: var(--color-white);
   -webkit-column-break-inside: avoid;
   cursor: pointer;
   box-sizing: border-box;
-  transition: 0.3s;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  margin: 2rem 2rem 2rem 0;
 }
 
 .article:hover {
-  transform: scale(1.015);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .article--dark {
-  background-color: var(--gray-7);
-  color: var(--gray-0);
+  background-color: var(--color-dark-5);
+  color: var(--dark-btn);
   cursor: pointer;
+}
+
+.article--dark:hover {
+  background-color: var(--color-dark-2);
+  box-shadow: none;
 }
 
 .article-image {

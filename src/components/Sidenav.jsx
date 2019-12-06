@@ -106,11 +106,11 @@ function Sidenav(props) {
 
       </div>
 
-      <button onClick={updateName}>UPDATE NAME</button>
+      {/* <button onClick={updateName}>UPDATE NAME</button>
       <button onClick={updatePassword}>UPDATE PASSWORD</button>
       <button onClick={sendResetPassword}>RESET PW EMAIL</button>
       <button onClick={updateEmail}>UPDATE EMAIL</button>
-      <button onClick={deleteUser}>DELETE USER</button>
+      <button onClick={deleteUser}>DELETE USER</button> */}
 
 
 
@@ -127,13 +127,13 @@ function Sidenav(props) {
         </div>
 
         <div className={toggleClassesWdarkMode(darkMode, "sidenav__nav-selected-country")}>
-          <span className={toggleClassesWdarkMode(darkMode, "sidenav__nav-selected-country-name")}>{selectedCountry.country}</span>
+          {/* <span className={toggleClassesWdarkMode(darkMode, "sidenav__nav-selected-country-name")}>{selectedCountry.country}</span> */}
           <img className={toggleClassesWdarkMode(darkMode, "sidenav__nav-selected-country-flag")} src={selectedCountry.src} alt={selectedCountry.country} />
         </div>
       </div>
 
       <div className={toggleClassesWdarkMode(darkMode, "sidenav__menu-name")}>
-        <h3>Article Categories</h3>
+        <h3>Categories</h3>
       </div>
 
       {/* render the category oprions in the navigation */}

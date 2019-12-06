@@ -9,14 +9,14 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 1.6rem;
-  background-color: var(--gray-4);
+  background-color: var(--color-light-4);
   transition: 0.8s;
   z-index: 200;
 }
 
 .header--dark {
-  background-color: var(--gray-7);
-  color: var(--gray-0);
+  background-color: var(--color-dark-4);
+  color: var(--dark-btn);
 }
 
 /* Make room for the menu icon on mobile */

@@ -9,13 +9,13 @@
   transition: all 0.6s ease-in-out;
   font-size: 2rem;
   z-index: 201; /* Needs to sit above the hamburger menu icon */
-  background-color: var(--gray-2);
-  overflow: hidden;
+  background-color: var(--color-light-4);
+  /* overflow: hidden; */
 }
 
 .sidenav--dark {
-  background-color: var(--gray-9);
-  color: var(--gray-0);
+  background-color: var(--color-dark-4);
+  color: var(--dark-btn);
 }
 
 .sidenav.active {
@@ -26,7 +26,7 @@
 
 .sidenav__account-container {
   width: 100%;
-  height: 7.5rem;
+  height: 7rem;
 }
 
 .sidenav__account {
@@ -34,13 +34,13 @@
   align-items: center;
   width: 100%;
   height: 100%;
-  background-color: var(--gray-1);
-  color: var(--gray-9);
+  /* background-color: var(--gray-1); */
+  /* color: var(--gray-9); */
 }
 
 .sidenav__account--dark {
-  background-color: var(--gray-7);
-  color: var(--gray-0);
+  /* background-color: var(--gray-7); */
+  /* color: var(--gray-0); */
 }
 
 .sidenav__account-user-picture {
@@ -49,13 +49,14 @@
   min-height: 7rem;
   min-width: 7rem;
   border-radius: 50%;
-  border: 3px solid var(--gray-0);
-  box-shadow: 2px 2px 2px var(--gray-3);
+  /* border: 3px solid var(--color-white); */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  margin-left: 1rem;
 }
 
 .sidenav__account-user-picture--dark {
-  border: 3px solid var(--gray-2);
-  box-shadow: none;
+  /* border: 3px solid var(--gray-2); */
+  /* box-shadow: none; */
 }
 
 .sidenav__account-user-name {
@@ -67,15 +68,15 @@
 .sidenav__close-icon {
   position: absolute;
   visibility: visible;
-  top: 1.2rem;
+  top: 1.5rem;
   right: 2rem;
   cursor: pointer;
   font-size: 3rem;
-  color: var(--gray-9);
+  /* color: var(--gray-9); */
 }
 
 .sidenav__close-icon--dark {
-  color: var(--gray-3);
+  /* color: var(--gray-3); */
 }
 
 /* ------------------------------------- Login Container --------------------------------- */
@@ -92,25 +93,28 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100%;
+  height: 70%;
+  margin-top: 0.5rem;
   text-decoration: none;
-  color: var(--gray-0);
-  background-color: var(--gray-9);
+  color: var(--color-dark-5);
+  background-color: var(--color-white);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  border-radius: 50rem;
   font-size: 2rem;
   transition: 0.2s;
 }
 
 .sidenav__login-btn:hover {
-  background-color: var(--gray-6);
-  font-size: 2.3rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
 .sidenav__login-btn--dark {
-  background-color: var(--gray-6);
+  background-color: var(--dark-btn);
 }
 
 .sidenav__login-btn--dark:hover {
-  background-color: var(--gray-4);
+  background-color: var(--dark-btn-hover);
+  color: var(--dark-btn);
 }
 
 /* ------------------------ Options Container ------------------------- */
@@ -128,11 +132,10 @@
   align-items: center;
   width: 60%;
   height: 100%;
-  background-color: var(--gray-1);
 }
 
 .sidenav__switch--dark {
-  background-color: var(--gray-7);
+  /* background-color: var(--gray-7); */
 }
 
 .sun-icon,
@@ -169,7 +172,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--gray-9);
+  background-color: var(--color-white);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
@@ -181,13 +185,13 @@
   width: 2.7rem;
   left: 4px;
   bottom: 4px;
-  background-color: var(--gray-0);
+  background-color: var(--dark-btn-hover);
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
 input:checked + .slider {
-  background-color: var(--gray-5);
+  background-color: var(--dark-btn);
 }
 
 input:focus + .slider {
@@ -217,35 +221,23 @@ input:checked + .slider:before {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--gray-0);
+  /* background-color: var(--gray-0); */
 }
 
 .sidenav__nav-selected-country--dark {
-  background-color: var(--gray-8);
+  /* background-color: var(--gray-8); */
 }
 
 .sidenav__nav-selected-country-flag {
   height: 4.5rem;
   width: 4.5rem;
   border-radius: 50%;
-  border: 3px solid var(--gray-0);
-  box-shadow: 2px 2px 2px var(--gray-3);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 .sidenav__nav-selected-country-flag--dark {
-  box-shadow: none;
-  border: 3px solid var(--gray-2);
-}
-
-.sidenav__nav-selected-country-name {
-  font-size: 2.5rem;
-  padding: 0.5rem;
-  font-weight: bold;
-  color: var(--gray-9);
-}
-
-.sidenav__nav-selected-country-name--dark {
-  color: var(--gray-0);
+  /* box-shadow: none;
+  border: 3px solid var(--gray-2); */
 }
 
 /* -------------------------------- Menu Name -------------------------------------- */
@@ -255,11 +247,12 @@ input:checked + .slider:before {
   align-items: center;
   width: 100%;
   height: 7rem;
-  background-color: var(--gray-3);
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
 }
 
 .sidenav__menu-name--dark {
-  background-color: var(--gray-6);
+  /* background-color: var(--gray-6); */
 }
 /* -------------------------------- List Container -------------------------------- */
 
@@ -278,7 +271,7 @@ input:checked + .slider:before {
 
   .sidenav__close-icon {
     font-size: 2rem;
-    top: 0.8rem;
+    top: 1rem;
     right: 1.2rem;
   }
 

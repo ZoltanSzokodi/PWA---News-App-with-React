@@ -5,11 +5,16 @@
   left: 2rem;
   align-items: center;
   justify-content: center;
-  background-color: var(--gray-2);
+  background-color: var(--color-light-5);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   border-radius: 50%;
   z-index: 199;
   cursor: pointer;
   padding: 1.6rem;
   font-size: 2rem;
   z-index: 201;
+}
+
+.menu-icon--dark {
+  /* background-color: var(--dark-btn); */
 }

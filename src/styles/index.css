@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: var(--color-light-4);
+}
+
 html {
   font-size: 62.5%;
   font-family: "Noto Sans", sans-serif;
@@ -15,16 +19,25 @@ html {
 
 /* custom properties */
 :root {
+  /* light theme */
   --transparent: rgba(255, 255, 255, 0);
-  --gray-0: #fff;
-  --gray-1: #f4f3f3;
-  --gray-2: #ddd;
-  --gray-3: #ccc;
-  --gray-4: #bcbcbc;
+  --color-white: #fff;
+  --color-light-1: #fcfcfc;
+  --color-light-2: #f8f8f8;
+  --color-light-3: #f5f5f5;
+  --color-light-4: #f2f2f2;
+  --color-light-5: #e2e1e0;
+  --light-btn: #182126;
+  --light-btn-hover: #516b8c;
+  --light-btn-font: #f2ede4;
 
-  --gray-5: #a6a6a6;
-  --gray-6: #7c7c7c;
-  --gray-7: #545454;
-  --gray-8: #303030;
-  --gray-9: #0d0d0d;
+  /* dark theme */
+  --color-dark-1: #424a59;
+  --color-dark-2: #363e4c;
+  --color-dark-3: #2a323f;
+  --color-dark-4: #1f2732;
+  --color-dark-5: #141c26;
+  --dark-btn: #f2ede4;
+  --dark-btn-hover: #516b8c;
+  --dark-btn-font: #182126;
 }
