@@ -102,8 +102,6 @@ function Home() {
     setSelectedArticle(null)
   }
 
-  console.log(searchKeyword)
-
   return (
     <ThemeProvider>
       <ContentWrap>

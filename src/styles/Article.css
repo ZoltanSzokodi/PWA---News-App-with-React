@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  background-color: var(--color-white);
+  background-color: var(--white);
   -webkit-column-break-inside: avoid;
   cursor: pointer;
   box-sizing: border-box;
@@ -18,13 +18,13 @@
 }
 
 .article--dark {
-  background-color: var(--color-dark-5);
-  color: var(--dark-btn);
+  background-color: var(--dark-5);
+  color: var(--light-yellow);
   cursor: pointer;
 }
 
 .article--dark:hover {
-  background-color: var(--color-dark-2);
+  background-color: var(--dark-2);
   box-shadow: none;
 }
 

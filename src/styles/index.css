@@ -22,23 +22,22 @@ html {
 :root {
   /* light theme */
   --transparent: rgba(255, 255, 255, 0);
-  --color-white: #fff;
-  --color-light-1: #fcfcfc;
-  --color-light-2: #f8f8f8;
-  --color-light-3: #f5f5f5;
-  --color-light-4: #f2f2f2;
-  --color-light-5: #e2e1e0;
-  --light-btn: #182126;
-  --light-btn-hover: #516b8c;
-  --light-btn-font: #f2ede4;
+  --white: #fff;
+  --light-1: #fcfcfc;
+  --light-2: #f8f8f8;
+  --light-3: #f5f5f5;
+  --light-4: #f2f2f2;
+  --light-5: #e2e1e0;
 
   /* dark theme */
-  --color-dark-1: #424a59;
-  --color-dark-2: #363e4c;
-  --color-dark-3: #2a323f;
-  --color-dark-4: #1f2732;
-  --color-dark-5: #141c26;
-  --dark-btn: #f2ede4;
-  --dark-btn-hover: #516b8c;
-  --dark-btn-font: #182126;
+  --dark-1: #424a59;
+  --dark-2: #363e4c;
+  --dark-3: #2a323f;
+  --dark-4: #1f2732;
+  --dark-5: #141c26;
+
+  /* miscellanious */
+  --dark-blue: #182126;
+  --light-blue: #516b8c;
+  --light-yellow: #f2ede4;
 }

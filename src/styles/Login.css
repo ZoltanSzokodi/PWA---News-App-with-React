@@ -1,7 +1,7 @@
 .login-wrapper {
   height: 100vh;
   width: 100%;
-  background-color: var(--color-light-3);
+  background-color: var(--light-3);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,13 +17,13 @@
   justify-content: center;
   align-items: center;
   padding: 2rem 4rem;
-  background-color: var(--color-white);
+  background-color: var(--white);
   border-radius: 5px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
 .login-goBack {
   text-decoration: none;
-  color: var(--gray-8);
+  color: var(--dark-5);
   font-size: 1.3rem;
 }

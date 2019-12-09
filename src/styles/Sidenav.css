@@ -9,12 +9,12 @@
   transition: all 0.6s ease-in-out;
   font-size: 2rem;
   z-index: 201; /* Needs to sit above the hamburger menu icon */
-  background-color: var(--color-light-4);
+  background-color: var(--light-4);
 }
 
 .sidenav--dark {
-  background-color: var(--color-dark-4);
-  color: var(--dark-btn);
+  background-color: var(--dark-4);
+  color: var(--light-yellow);
 }
 
 .sidenav.active {
@@ -95,8 +95,8 @@
   height: 70%;
   margin-top: 0.5rem;
   text-decoration: none;
-  color: var(--color-dark-5);
-  background-color: var(--color-white);
+  color: var(--dark-5);
+  background-color: var(--white);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   border-radius: 50rem;
   font-size: 2rem;
@@ -108,12 +108,12 @@
 }
 
 .sidenav__login-btn--dark {
-  background-color: var(--dark-btn);
+  background-color: var(--light-yellow);
 }
 
 .sidenav__login-btn--dark:hover {
-  background-color: var(--dark-btn-hover);
-  color: var(--dark-btn);
+  background-color: var(--light-blue);
+  color: var(--light-yellow);
 }
 
 /* ------------------------ Options Container ------------------------- */
@@ -171,7 +171,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--color-white);
+  background-color: var(--white);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   -webkit-transition: 0.4s;
   transition: 0.4s;
@@ -184,13 +184,13 @@
   width: 2.7rem;
   left: 4px;
   bottom: 4px;
-  background-color: var(--dark-btn-hover);
+  background-color: var(--light-blue);
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
 input:checked + .slider {
-  background-color: var(--dark-btn);
+  background-color: var(--light-yellow);
 }
 
 input:focus + .slider {

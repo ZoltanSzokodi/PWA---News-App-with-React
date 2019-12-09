@@ -4,10 +4,10 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 16px;
-  background-color: var(--color-light-1);
+  background-color: var(--light-1);
 }
 
 .footer--dark {
-  background-color: var(--color-dark-5);
-  color: var(--color-white);
+  background-color: var(--dark-5);
+  color: var(--white);
 }
