@@ -17,6 +17,9 @@ import gr from '../img/gr.svg'
 import hk from '../img/hk.svg'
 import ind from '../img/in.svg'
 
+import React from 'react'
+import Notify from '../components/Notify'
+
 // array for the country select
 export const flagsArr = [
   { src: de, country: "de" },
@@ -73,3 +76,8 @@ export const toggleClassesActiveAndDarkMode = (menuSt, mode) => {
   }
   return classes;
 };
+
+// toggle notification
+export const toggleNotification = (status, message) => {
+  return <Notify status={status} message={message} />
+}

@@ -10,10 +10,14 @@ export const AuthProvider = ({ children }) => {
     config.auth().onAuthStateChanged(setCurrentUser);
   }, [])
 
+  const signOut = () => {
+    return config.auth().signOut();
+  }
+
   console.log(currentUser)
 
   return (
-    <AuthContext.Provider value={{ currentUser }}>
+    <AuthContext.Provider value={{ currentUser, signOut }}>
       {children}
     </AuthContext.Provider>
   );

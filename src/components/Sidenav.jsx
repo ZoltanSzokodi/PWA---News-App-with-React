@@ -1,9 +1,8 @@
 import React, { useContext } from 'react'
-import { Link, Redirect } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { toggleClassesActiveAndDarkMode, toggleClassesWdarkMode } from '../functions/helpers'
 import { ThemeContext } from '../context/ThemeContext'
 import { AuthContext } from '../context/AuthContext'
-import { config } from '../firebase';
 import SidenavListItem from './SidenavListItem'
 import defaultUserImg from '../img/default-profile-picture.jpg'
 import '../styles/Sidenav.css'
@@ -18,64 +17,9 @@ function Sidenav(props) {
   } = props;
 
   const { darkMode, handleToggleDarkMode } = useContext(ThemeContext);
-  const { currentUser } = useContext(AuthContext);
+  const { currentUser, signOut } = useContext(AuthContext);
 
-
-  // --------------------------------- EXPERIMENTS PROFILE UPDATE ------------------------------
-
-  const signOut = () => {
-    return config.auth().signOut();
-  }
-
-  const updateName = () => {
-    currentUser.updateProfile({
-      displayName: "Szabesz"
-    }).then(function () {
-      console.log("NAME update SUCCESS")
-      window.location.reload(true)
-    }).catch(function (error) {
-      console.log("NAME update FAIL", error)
-    });
-  }
-  // --------------------------------------------------------------
-  const updatePassword = () => {
-    currentUser.updatePassword("654321").then(function () {
-      console.log("PASSWORD update SUCCESS")
-      signOut()
-    }).catch(function (error) {
-      console.log("PASSWORD update FAILED", error)
-    });
-  }
-  // either of the 2 is enough
-  const sendResetPassword = () => {
-    config.auth().sendPasswordResetEmail(currentUser.email).then(function () {
-      console.log("email sent")
-      signOut()
-    }).catch(function (error) {
-      console.log("something went wrong", error)
-    });
-  }
-  // --------------------------------------------------------------
-  const updateEmail = () => {
-    currentUser.updateEmail("zoltan@hotmail.com").then(function () {
-      console.log("EMAIL update SUCCESS")
-    }).catch(function (error) {
-      console.log("EMAIL update FAIL", error)
-    });
-  }
-  // --------------------------------------------------------------
-  const deleteUser = () => {
-    currentUser.delete().then(function () {
-      console.log("user deleted")
-    }).catch(function (error) {
-      console.log("something went wrong", error)
-    });
-  }
-
-
-
-
-
+  console.log(currentUser)
 
   return (
     // toggle menu according to menuStae
@@ -102,18 +46,9 @@ function Sidenav(props) {
           (<Link className={toggleClassesWdarkMode(darkMode, "sidenav__login-btn")} to="/login">sign in</Link>)}
 
         {/* depending on the current user's provider id display "account" or don't */}
-        <Link className={toggleClassesWdarkMode(darkMode, "sidenav__login-btn")} style={currentUser && currentUser.providerData[0].providerId === "password" ? { display: "flex" } : { display: "none" }} to="/">account</Link>
+        <Link className={toggleClassesWdarkMode(darkMode, "sidenav__login-btn")} style={currentUser && currentUser.providerData[0].providerId === "password" ? { display: "flex" } : { display: "none" }} to="/account">account</Link>
 
       </div>
-
-      {/* <button onClick={updateName}>UPDATE NAME</button>
-      <button onClick={updatePassword}>UPDATE PASSWORD</button>
-      <button onClick={sendResetPassword}>RESET PW EMAIL</button>
-      <button onClick={updateEmail}>UPDATE EMAIL</button>
-      <button onClick={deleteUser}>DELETE USER</button> */}
-
-
-
 
       <div className="sidenav__options-container">
 
