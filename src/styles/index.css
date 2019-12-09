@@ -40,4 +40,6 @@ html {
   --dark-blue: #182126;
   --light-blue: #516b8c;
   --light-yellow: #f2ede4;
+  --success: rgb(107, 194, 130);
+  --fail: rgb(255, 70, 0);
 }

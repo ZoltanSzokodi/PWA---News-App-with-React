@@ -51,7 +51,7 @@
 }
 
 .article__content-title {
-  background-color: var(--light-yellow);
+  background-color: var(--dark-blue);
   color: var(--light-yellow);
   margin-bottom: 4rem;
 }

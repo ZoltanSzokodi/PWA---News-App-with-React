@@ -53,13 +53,25 @@
 .user-delete {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.user-input {
+  border: none;
+  border-radius: 50rem;
+  padding: 1rem;
+  width: 15rem;
+}
+
+.user-input:focus {
+  outline: none;
 }
 
 .submit-btn {
   border: none;
   padding: 1rem;
   background-color: #ff6347;
-  min-width: 7rem;
+  min-width: 7.2rem;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
@@ -67,6 +79,10 @@
   font-size: 1.4rem;
   color: var(--white);
   font-family: inherit;
+}
+
+.submit-btn:focus {
+  outline: none;
 }
 
 .go-back {

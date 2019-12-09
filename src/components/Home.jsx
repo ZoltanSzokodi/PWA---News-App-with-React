@@ -20,30 +20,30 @@ function Home() {
 
   // ********************************** FETCH TOP HEADLINES ***********************************
 
-  // useEffect(() => {
-  //   const getHeadlines = async (country, category, srckey) => {
-  //     const APIKey = '1f9659798f1841bb962c9bc56cc559a2';
-  //     const categ = category !== 'all' ? '&category=' + category : '';
-  //     const srck = srckey !== null ? 'q=' + srckey + '&' : '';
-  //     const url = `https://newsapi.org/v2/top-headlines?${srck}country=${country}${categ}`;
-  //     const headers = { "X-Api-Key": APIKey };
+  useEffect(() => {
+    const getHeadlines = async (country, category, srckey) => {
+      const APIKey = '1f9659798f1841bb962c9bc56cc559a2';
+      const categ = category !== 'all' ? '&category=' + category : '';
+      const srck = srckey !== null ? 'q=' + srckey + '&' : '';
+      const url = `https://newsapi.org/v2/top-headlines?${srck}country=${country}${categ}`;
+      const headers = { "X-Api-Key": APIKey };
 
-  //     try {
-  //       let response = await fetch(url, { headers });
-  //       let data = await response.json();
-  //       let dataWithKeys = [];
+      try {
+        let response = await fetch(url, { headers });
+        let data = await response.json();
+        let dataWithKeys = [];
 
-  //       data.articles.forEach(article => {
-  //         dataWithKeys.push({ ...article, uuid: uuid() })
-  //       })
+        data.articles.forEach(article => {
+          dataWithKeys.push({ ...article, uuid: uuid() })
+        })
 
-  //       setArticlesArr(dataWithKeys)
+        setArticlesArr(dataWithKeys)
 
-  //     } catch (err) { console.log(err) }
-  //   }
-  //   getHeadlines(selectedCountry.country, selectedCategory, searchKeyword)
-  //   // in case these state props change go and fetch data again
-  // }, [selectedCountry, selectedCategory, searchKeyword])
+      } catch (err) { console.log(err) }
+    }
+    getHeadlines(selectedCountry.country, selectedCategory, searchKeyword)
+    // in case these state props change go and fetch data again
+  }, [selectedCountry, selectedCategory, searchKeyword])
 
 
   // when opening an article jump to the top os the page

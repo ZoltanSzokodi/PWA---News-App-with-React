@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import { AuthContext } from '../context/AuthContext'
 import { Link, Redirect } from 'react-router-dom'
 import { config } from '../firebase';
@@ -6,10 +6,7 @@ import { toggleNotification } from '../functions/helpers'
 import defaultUserImg from '../img/default-profile-picture.jpg'
 import '../styles/UserAccount.css'
 
-
-
 function UserAccount() {
-
   const { currentUser, signOut } = useContext(AuthContext);
   const [userName, setUserName] = useState("");
   const [userEmail, setUserEmail] = useState("");
@@ -38,9 +35,9 @@ function UserAccount() {
   // ------------------------- SUBMIT NEW CREDENTIALS ------------------
 
   const updateName = () => {
-    if (userName.length < 6) {
+    if (userName.length < 5) {
       setSatus("fail")
-      setMessage("Failed to update - NAME MUST BE AT LEAST 6 CHARS")
+      setMessage("Name must be at lest 5 chars")
       resetNotification()
     } else {
       currentUser.updateProfile({
@@ -52,7 +49,7 @@ function UserAccount() {
       }).catch((error) => {
         console.log(error)
         setSatus("fail")
-        setMessage("Failed to update name.")
+        setMessage(error.message)
         resetNotification()
       });
     }
@@ -68,7 +65,7 @@ function UserAccount() {
     }).catch(error => {
       console.log("EMAIL update FAIL", error)
       setSatus("fail")
-      setMessage("Failed to update email - SESSION TIMEOUT")
+      setMessage(error.message)
       resetNotification()
     });
   }
@@ -83,7 +80,7 @@ function UserAccount() {
     }).catch(error => {
       console.log("something went wrong", error)
       setSatus("fail")
-      setMessage("Failed to send password reset email. - SESSION TIMEOUT")
+      setMessage(error.message)
       resetNotification()
     });
   }
@@ -92,8 +89,14 @@ function UserAccount() {
   const deleteUser = () => {
     currentUser.delete().then(() => {
       console.log("user deleted")
+      setSatus("success")
+      setMessage("User deleted")
+      resetNotification()
     }).catch(error => {
       console.log("something went wrong", error)
+      setSatus("fail")
+      setMessage(error.message)
+      resetNotification()
     });
   }
 
@@ -104,7 +107,7 @@ function UserAccount() {
   //   }).catch(function (error) {
   //     console.log("PASSWORD update FAILED", error)
   //   });
-  // }
+  // }  
 
   return (
     <div className="user-wrapper">
@@ -124,12 +127,12 @@ function UserAccount() {
         <div className="user__details--credentials-container">
           <div className="user-name">
             <label>name</label>
-            <input type="text" htmlFor="name" onChange={handleNameChange} />
+            <input className="user-input" type="text" htmlFor="name" onChange={handleNameChange} />
             <button className="submit-btn" onClick={updateName}>submit</button>
           </div>
           <div className="user-email">
             <label>email</label>
-            <input type="email" htmlFor="email" onChange={handleEmailChange} />
+            <input className="user-input" type="email" htmlFor="email" onChange={handleEmailChange} />
             <button className="submit-btn" onClick={updateEmail}>submit</button>
           </div>
           <div className="user-password">
@@ -138,7 +141,7 @@ function UserAccount() {
           </div>
           <div className="user-delete">
             <span>delete account</span>
-            <Link className="submit-btn" to="/" onClick={deleteUser}>delete</Link>
+            <button className="submit-btn" onClick={deleteUser}>delete</button>
           </div>
           <Link className="go-back" to="/"><i className="fas fa-angle-left" /> Go back</Link>
         </div>
