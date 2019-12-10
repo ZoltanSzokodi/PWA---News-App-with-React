@@ -1,7 +1,8 @@
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useState, useContext } from 'react'
 import { AuthContext } from '../context/AuthContext'
 import { Link, Redirect } from 'react-router-dom'
-import { config } from '../firebase';
+// import { config } from '../firebase';
+import firebase from '../firebase'
 import { toggleNotification } from '../functions/helpers'
 import defaultUserImg from '../img/default-profile-picture.jpg'
 import '../styles/UserAccount.css'
@@ -72,7 +73,7 @@ function UserAccount() {
 
   // _______________________________________________________________
   const sendResetPassword = () => {
-    config.auth().sendPasswordResetEmail(currentUser.email).then(() => {
+    firebase.auth().sendPasswordResetEmail(currentUser.email).then(() => {
       console.log("email sent")
       setSatus("success")
       setMessage("A password reset email has been sent.")
@@ -89,14 +90,8 @@ function UserAccount() {
   const deleteUser = () => {
     currentUser.delete().then(() => {
       console.log("user deleted")
-      setSatus("success")
-      setMessage("User deleted")
-      resetNotification()
     }).catch(error => {
       console.log("something went wrong", error)
-      setSatus("fail")
-      setMessage(error.message)
-      resetNotification()
     });
   }
 
@@ -117,14 +112,14 @@ function UserAccount() {
 
       <div className="user__details">
 
-        <div className="user__details--photo-container">
+        <div className="user__details-photo-container">
           <img className="user__details-photo" src={defaultUserImg} alt="user" />
         </div>
 
         {/* <Notify status={"success"} message={"yuppyy"}></Notify> */}
         {toggleNotification(status, message)}
 
-        <div className="user__details--credentials-container">
+        <div className="user__details-credentials-container">
           <div className="user-name">
             <label>name</label>
             <input className="user-input" type="text" htmlFor="name" onChange={handleNameChange} />

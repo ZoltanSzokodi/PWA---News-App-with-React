@@ -1,7 +1,8 @@
 import React, { useContext } from 'react'
 import { withRouter, Redirect } from 'react-router'
 import { Link } from 'react-router-dom'
-import { config, uiConfig } from '../firebase'
+// import { config, uiConfig } from '../firebase'
+import firebase, { uiConfig } from '../firebase'
 import { AuthContext } from '../context/AuthContext'
 import '../styles/Login.css'
 
@@ -17,7 +18,7 @@ function Login() {
         {currentUser ? (
           <Redirect to="/" />
         ) : (
-            <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={config.auth()} />
+            <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
           )}
         <Link className="login-goBack" to="/" ><i className="fas fa-angle-left"></i> Go back</Link>
       </div>

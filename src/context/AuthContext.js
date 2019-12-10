@@ -1,20 +1,20 @@
 import React, { useEffect, useState, createContext } from 'react'
-import { config } from '../firebase'
-
+// import { config } from '../firebase'
+import firebase from '../firebase'
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
 
   useEffect(() => {
-    config.auth().onAuthStateChanged(setCurrentUser);
+    firebase.auth().onAuthStateChanged(setCurrentUser);
   }, [])
 
   const signOut = () => {
-    return config.auth().signOut();
+    return firebase.auth().signOut();
   }
 
-  console.log(currentUser)
+  // console.log(currentUser)
 
   return (
     <AuthContext.Provider value={{ currentUser, signOut }}>

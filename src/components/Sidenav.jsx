@@ -19,8 +19,6 @@ function Sidenav(props) {
   const { darkMode, handleToggleDarkMode } = useContext(ThemeContext);
   const { currentUser, signOut } = useContext(AuthContext);
 
-  console.log(currentUser)
-
   return (
     // toggle menu according to menuStae
     <aside className={toggleClassesActiveAndDarkMode(menuState, darkMode)}>
