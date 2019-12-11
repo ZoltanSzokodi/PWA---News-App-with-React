@@ -11,7 +11,12 @@ export const AuthProvider = ({ children }) => {
   }, [])
 
   const signOut = () => {
-    return firebase.auth().signOut();
+    firebase.auth().signOut();
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
   }
 
   // console.log(currentUser)

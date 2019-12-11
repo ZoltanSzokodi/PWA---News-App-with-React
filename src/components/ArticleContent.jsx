@@ -19,15 +19,19 @@ function ArticleContent(props) {
 
   return (
     <div className={toggleClassesWdarkMode(darkMode, "article__content")}>
+
       <div className={toggleClassesWdarkMode(darkMode, "article__content__hide")} style={currentUser ? { display: "none" } : { display: "flex" }}>
-        <h3 className="article__content__hide-message">Please sign in to read full article</h3>
-        <button onClick={props.handleGoBack}>Go Back</button>
+        <h3 className="article__content__hide-message">If you would like to continue reading this article please sign in</h3>
+        <button className={toggleClassesWdarkMode(darkMode, "article__content__hide-back-btn")} onClick={props.handleGoBack}>Go Back</button>
       </div>
+
       <img className="article__content-image" src={urlToImage} alt="article" />
+
       <div className={toggleClassesWdarkMode(darkMode, "article__content-details")}>
         <span>{author}</span>
         <span>{publishTime(publishedAt)}</span>
       </div>
+
       <h2 className={toggleClassesWdarkMode(darkMode, "article__content-title")}>{title}</h2>
       <p className="article__content-real">{content}</p>
       <p className="article__content-fake">
@@ -168,7 +172,7 @@ function ArticleContent(props) {
         Thank God Almighty, we are free at last!
       </p>
 
-      <button onClick={props.handleGoBack}>Go Back</button>
+      {/* <button onClick={props.handleGoBack}>Go Back</button> */}
 
       <CommentBlock selectedArticle={props.selectedArticle} />
 

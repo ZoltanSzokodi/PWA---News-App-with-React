@@ -16,6 +16,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   position: absolute;
   top: 0;
   left: 0;
@@ -23,6 +24,31 @@
   height: 100%;
   width: 100%;
   z-index: 100;
+}
+
+.article__content__hide-message {
+  text-align: center;
+}
+
+.article__content__hide-back-btn {
+  margin: 2rem 0;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 50rem;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  background-color: var(--dark-blue);
+  color: var(--light-yellow);
+  font-weight: bold;
+}
+
+.article__content__hide-back-btn:focus {
+  outline: none;
+}
+
+.article__content__hide-back-btn--dark {
+  background-color: var(--light-yellow);
+  color: var(--dark-blue);
 }
 
 .article__content__hide--dark {

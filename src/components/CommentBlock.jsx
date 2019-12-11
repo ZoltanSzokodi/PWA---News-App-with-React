@@ -56,6 +56,7 @@ function CommentBlock(props) {
     // after every comment submit we fetch the comments again
     fetchComments()
     commentArea.value = ""
+    setNewCommentBody("")
   }
 
   // deleting a comment
@@ -71,11 +72,7 @@ function CommentBlock(props) {
     setNewCommentBody(e.target.value)
   }
 
-  // console.log("SELECTED-ARTICLE: ", props.selectedArticle)
-  // console.log("CURRENT USER: ", currentUser)
-  // console.log("COMMENTS IN DB: ", comments)
-  // console.log("NEW COMMENT BODY: ", newCommentBody)
-  console.log(comments)
+  // console.log(comments)
 
   return (
     <React.Fragment>
