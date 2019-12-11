@@ -8,13 +8,11 @@ import defaultUserImg from '../img/default-profile-picture.jpg'
 import '../styles/UserAccount.css'
 
 function UserAccount() {
-  const { currentUser, signOut } = useContext(AuthContext);
+  const { currentUser } = useContext(AuthContext);
   const [userName, setUserName] = useState("");
   const [userEmail, setUserEmail] = useState("");
   const [status, setSatus] = useState(null);
   const [message, setMessage] = useState(null);
-
-  // console.log(currentUser)
 
   // ------------------------- EVENT HANDLERS --------------------------
 

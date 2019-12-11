@@ -143,12 +143,9 @@
   filter: grayscale(50%);
 }
 
-.sun-icon {
-  color: gold;
-}
-
+.sun-icon,
 .moon-icon {
-  color: darkblue;
+  color: gold;
 }
 
 .switch {

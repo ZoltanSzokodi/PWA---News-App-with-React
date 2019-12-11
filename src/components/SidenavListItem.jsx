@@ -7,9 +7,9 @@ function SidenavListItem({ handleCategorySelect, id }) {
   const { darkMode } = useContext(ThemeContext);
 
   return (
-    <div onClick={() => handleCategorySelect(id)}>
-      <li className={toggleClassesWdarkMode(darkMode, "sidenav__list-item")}>{id}</li>
-    </div>
+    <React.Fragment>
+      <li className={toggleClassesWdarkMode(darkMode, "sidenav__list-item")} onClick={() => handleCategorySelect(id)}>{id}</li>
+    </React.Fragment>
   )
 }
 
