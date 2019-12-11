@@ -58,7 +58,7 @@
 
 .article__content-title--dark {
   background-color: var(--light-yellow);
-  color: var(--light-yellow);
+  color: var(--dark-blue);
 }
 
 .article__content-title,

@@ -24,6 +24,24 @@
   margin-left: 7rem;
 }
 
+.header__arrows-container {
+  font-size: 4rem;
+}
+
+.up-arrow,
+.down-arrow {
+  margin: 1rem;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  border-radius: 50%;
+  cursor: pointer;
+  color: var(--dark-1);
+}
+
+.up-arrow--dark,
+.down-arrow--dark {
+  color: var(--light-yellow);
+}
+
 @media only screen and (min-width: 550px) {
   .header__login-out {
     display: flex;

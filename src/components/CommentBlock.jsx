@@ -79,13 +79,13 @@ function CommentBlock(props) {
 
   return (
     <React.Fragment>
-      <div className="comments__input-container">
+      <div className={toggleClassesWdarkMode(darkMode, "comments__input-container")}>
         <h3 className="comment-title">COMMENTS</h3>
-        <textarea className="comment-input-body" name="comment" wrap="hard" onChange={handleChange} required></textarea>
-        <button className="comment-btn" onClick={addComment} disabled={newCommentBody === "" && true}>add comment</button>
+        <textarea className={toggleClassesWdarkMode(darkMode, "comment-input-body")} name="comment" wrap="hard" onChange={handleChange} required></textarea>
+        <button className="comment-btn" onClick={addComment} disabled={newCommentBody === "" && true}><i className="fas fa-plus"></i></button>
       </div>
 
-      <div className="comments__output-container">
+      <div className={toggleClassesWdarkMode(darkMode, "comments__output-container")}>
         <ul className="comments-list">
           {comments.map(comment => (
             (comment.article_title === title) &&
@@ -95,7 +95,7 @@ function CommentBlock(props) {
                 <span className="comment__credentials--name">{comment.user_name}</span>
               </div>
 
-              <div className="comment-output-body">{comment.comment_body}</div>
+              <div className={toggleClassesWdarkMode(darkMode, "comment-output-body")}>{comment.comment_body}</div>
 
               {currentUser && (currentUser.uid === comment.user_id) &&
                 <div className="comment__change">

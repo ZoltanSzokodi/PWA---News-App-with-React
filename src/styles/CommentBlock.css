@@ -12,6 +12,11 @@
   background-color: var(--light-2);
 }
 
+.comments__input-container--dark,
+.comments__output-container--dark {
+  background-color: var(--dark-4);
+}
+
 .comment-title {
   margin-bottom: 2rem;
 }
@@ -26,6 +31,11 @@
   padding: 1rem;
 }
 
+.comment-input-body--dark {
+  background-color: var(--light-blue);
+  color: var(--light-yellow);
+}
+
 .comment-input-body:focus {
   outline: none;
 }
@@ -33,15 +43,15 @@
 .comment-btn {
   margin-top: 2rem;
   border: none;
-  padding: 1.5rem;
-  font-size: 1.6rem;
+  width: 5rem;
+  height: 5rem;
+  text-align: center;
+  font-size: 2rem;
   border-radius: 50rem;
   cursor: pointer;
   transition: 0.2s;
-}
-
-.comment-btn:hover {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  color: var(--dark-blue);
 }
 
 .comment-btn:focus {
@@ -95,6 +105,11 @@
   padding: 1rem;
   border-radius: 2px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.comment-output-body--dark {
+  background-color: var(--light-blue);
+  color: var(--light-yellow);
 }
 
 .comment__change {
