@@ -81,121 +81,6 @@
   color: var(--white);
 }
 
-/* COMMENT SECTION */
-/* ---------------------------- comment input ------------------------------- */
-.article__comments--input-container,
-.article__comments--output-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: auto;
-  padding: 2rem 0;
-  background-color: cornsilk;
-}
-
-.comment-title {
-  margin-bottom: 2rem;
-}
-
-.comment-input-body {
-  width: 100%;
-  height: 10rem;
-  border: none;
-  border-radius: 2px;
-}
-
-.comment-btn {
-  margin-top: 2rem;
-  border: none;
-  padding: 1.5rem;
-  font-size: 1.6rem;
-  border-radius: 50rem;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.comment-btn:hover {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-}
-
-.comment-btn:focus {
-  outline: none;
-}
-
-/* ---------------------------------- comment output ----------------------------- */
-.comments-list {
-  width: 100%;
-  text-align: center;
-  list-style: none;
-}
-
-.comment {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  min-height: 10rem;
-  padding: 1rem;
-  margin-bottom: 1.5rem;
-  background-color: white;
-  border-radius: 2px;
-}
-
-.comment__credentials {
-  width: 30%;
-  background-color: turquoise;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.comment__credentials--img {
-  width: 5rem;
-  height: 5rem;
-  border-radius: 50%;
-}
-
-.comment__credentials--name {
-  font-size: 1.2rem;
-}
-
-.comment-output-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 60%;
-  background-color: thistle;
-}
-
-.comment__change {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  background-color: steelblue;
-}
-
-@media only screen and (min-width: 50rem) {
-  .comment__credentials {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-  }
-
-  .comment__credentials--img {
-    margin: 0 3rem 0 0.6rem;
-    width: 7rem;
-    height: 7rem;
-  }
-
-  .comment__credentials--name {
-    font-size: 1.6rem;
-    text-align: left;
-  }
-}
-
 /* Non-mobile styles, 750px breakpoint */
 @media only screen and (min-width: 75rem) {
   .article__content-title,
@@ -207,10 +92,6 @@
 
   .article__content-details {
     font-size: 1.4rem;
-  }
-
-  .comment__change {
-    padding: 1rem;
   }
 }
 
