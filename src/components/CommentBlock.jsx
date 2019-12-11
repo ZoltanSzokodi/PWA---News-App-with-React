@@ -26,7 +26,7 @@ function CommentBlock(props) {
     if (currentUser !== null) {
       const data = await db.collection("comments").get();
       let commentsArray = [];
-      data.docs.map(doc => commentsArray.push(doc.data()))
+      data.docs.map(doc => commentsArray.push({ ...doc.data(), comment_id: doc.id }))
 
       // first I am pushing the comments from the db into an array which I sort according to their time stamp in order to render them in the correct order
       setComments(commentsArray.sort((a, b) => a.timestamp - b.timestamp));
@@ -58,15 +58,24 @@ function CommentBlock(props) {
     commentArea.value = ""
   }
 
+  // deleting a comment
+  const deleteComment = e => {
+    const id = e.target.getAttribute("data-id")
+    console.log(id)
+    db.collection("comments").doc(id).delete()
+    fetchComments()
+  }
+
   // listenig to textarea changes
   const handleChange = e => {
     setNewCommentBody(e.target.value)
   }
 
-  console.log("SELECTED-ARTICLE: ", props.selectedArticle)
-  console.log("CURRENT USER: ", currentUser)
-  console.log("COMMENTS IN DB: ", comments)
-  console.log("NEW COMMENT BODY: ", newCommentBody)
+  // console.log("SELECTED-ARTICLE: ", props.selectedArticle)
+  // console.log("CURRENT USER: ", currentUser)
+  // console.log("COMMENTS IN DB: ", comments)
+  // console.log("NEW COMMENT BODY: ", newCommentBody)
+  console.log(comments)
 
   return (
     <React.Fragment>
@@ -88,10 +97,11 @@ function CommentBlock(props) {
 
               <div className="comment-output-body">{comment.comment_body}</div>
 
-              <div className="comment__change">
-                <i className="fas fa-pen"></i>
-                <i className="fas fa-trash"></i>
-              </div>
+              {currentUser && (currentUser.uid === comment.user_id) &&
+                <div className="comment__change">
+                  <i className="far fa-trash-alt delete" data-id={comment.comment_id} onClick={deleteComment}></i>
+                </div>}
+
             </li>
           ))}
         </ul>
