@@ -7,7 +7,7 @@
   width: 100%;
   transform: translateX(-100%);
   transition: all 0.6s ease-in-out;
-  font-size: 2rem;
+  font-size: 1.4rem;
   z-index: 201; /* Needs to sit above the hamburger menu icon */
   background-color: var(--light-4);
 }
@@ -33,13 +33,6 @@
   align-items: center;
   width: 100%;
   height: 100%;
-  /* background-color: var(--gray-1); */
-  /* color: var(--gray-9); */
-}
-
-.sidenav__account--dark {
-  /* background-color: var(--gray-7); */
-  /* color: var(--gray-0); */
 }
 
 .sidenav__account-user-picture {
@@ -48,19 +41,12 @@
   min-height: 7rem;
   min-width: 7rem;
   border-radius: 50%;
-  /* border: 3px solid var(--color-white); */
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   margin-left: 1rem;
 }
 
-.sidenav__account-user-picture--dark {
-  /* border: 3px solid var(--gray-2); */
-  /* box-shadow: none; */
-}
-
 .sidenav__account-user-name {
   font-size: 1.8rem;
-  /* margin-left: 1rem; */
   text-align: center;
 }
 
@@ -71,11 +57,6 @@
   right: 2rem;
   cursor: pointer;
   font-size: 3rem;
-  /* color: var(--gray-9); */
-}
-
-.sidenav__close-icon--dark {
-  /* color: var(--gray-3); */
 }
 
 /* ------------------------------------- Login Container --------------------------------- */
@@ -133,13 +114,9 @@
   height: 100%;
 }
 
-.sidenav__switch--dark {
-  /* background-color: var(--gray-7); */
-}
-
 .sun-icon,
 .moon-icon {
-  font-size: 3rem;
+  font-size: 2.5rem;
   filter: grayscale(50%);
 }
 
@@ -217,23 +194,13 @@ input:checked + .slider:before {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background-color: var(--gray-0); */
-}
-
-.sidenav__nav-selected-country--dark {
-  /* background-color: var(--gray-8); */
 }
 
 .sidenav__nav-selected-country-flag {
-  height: 4.5rem;
-  width: 4.5rem;
+  height: 3.5rem;
+  width: 3.5rem;
   border-radius: 50%;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-}
-
-.sidenav__nav-selected-country-flag--dark {
-  /* box-shadow: none;
-  border: 3px solid var(--gray-2); */
 }
 
 /* -------------------------------- Menu Name -------------------------------------- */
@@ -247,9 +214,6 @@ input:checked + .slider:before {
   text-transform: uppercase;
 }
 
-.sidenav__menu-name--dark {
-  /* background-color: var(--gray-6); */
-}
 /* -------------------------------- List Container -------------------------------- */
 
 .sidenav__list {

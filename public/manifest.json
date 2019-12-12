@@ -8,47 +8,47 @@
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "../src/img/icons/icons8-news-72.png",
+      "src": "/icons/icons8-news-72.png",
       "type": "image/png",
       "sizes": "72x72"
     },
     {
-      "src": "../src/img/icons/icons8-news-96.png",
+      "src": "/icons/icons8-news-96.png",
       "type": "image/png",
       "sizes": "96x96"
     },
     {
-      "src": "../src/img/icons/icons8-news-128.png",
+      "src": "/icons/icons8-news-128.png",
       "type": "image/png",
       "sizes": "128x128"
     },
     {
-      "src": "../src/img/icons/icons8-news-144.png",
+      "src": "/icons/icons8-news-144.png",
       "type": "image/png",
       "sizes": "144x144"
     },
     {
-      "src": "../src/img/icons/icons8-news-152.png",
+      "src": "/icons/icons8-news-152.png",
       "type": "image/png",
       "sizes": "152x152"
     },
     {
-      "src": "../src/img/icons/icons8-news-192.png",
+      "src": "/icons/icons8-news-192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "../src/img/icons/icons8-news-256.png",
+      "src": "/icons/icons8-news-256.png",
       "type": "image/png",
       "sizes": "256x256"
     },
     {
-      "src": "../src/img/icons/icons8-news-384.png",
+      "src": "/icons/icons8-news-384.png",
       "type": "image/png",
       "sizes": "384x384"
     },
     {
-      "src": "../src/img/icons/icons8-news-512.png",
+      "src": "/icons/icons8-news-512.png",
       "type": "image/png",
       "sizes": "512x512"
     }

@@ -20,7 +20,7 @@ function CommentBlock(props) {
   // Initializing the database 
   const db = firebase.firestore();
 
-  // ------------------------------------- FETCH ALL COMMENTS --------------------------------
+  // ------------------------------------- FETCH ALL COMMENTS--------------------------------
   const fetchComments = async () => {
     // if there is no current user do not fetch comments
     if (currentUser !== null) {
@@ -33,6 +33,23 @@ function CommentBlock(props) {
     }
     return;
   };
+
+  console.log(currentUser)
+
+  // db.collection("comments").onSnapshot(snapshot => {
+  //   let changes = snapshot.docChanges();
+  //   let commentsArray = [...comments]
+  //   changes.forEach(change => {
+  //     // console.log(change.doc.data(), change.doc.id)
+  //     if (change.type === "added") {
+  //       commentsArray.push({ ...change.doc.data() })
+  //       setComments(commentsArray)
+  //     } else if (change.type === "removed") {
+  //       commentsArray.filter(doc => doc.id !== change.doc.id)
+  //       setComments(commentsArray)
+  //     }
+  //   })
+  // })
 
   useEffect(() => {
     fetchComments()
@@ -62,7 +79,7 @@ function CommentBlock(props) {
   // deleting a comment
   const deleteComment = e => {
     const id = e.target.getAttribute("data-id")
-    console.log(id)
+    // console.log(id)
     db.collection("comments").doc(id).delete()
     fetchComments()
   }
@@ -86,7 +103,7 @@ function CommentBlock(props) {
         <ul className="comments-list">
           {comments.map(comment => (
             (comment.article_title === title) &&
-            <li className="comment" key={uuid()}>
+            <li className={toggleClassesWdarkMode(darkMode, "comment")} key={uuid()}>
               <div className="comment__credentials">
                 <img className="comment__credentials--img" src={defaultUserImg} alt="photo" />
                 <span className="comment__credentials--name">{comment.user_name}</span>
