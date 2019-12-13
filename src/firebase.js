@@ -1,6 +1,6 @@
 // import * as firebase from 'firebase/app'
 import firebase from 'firebase'
-
+import 'firebase/storage'
 import 'firebase/auth'
 
 // initializing firebase app
@@ -38,4 +38,7 @@ export const uiConfig = {
   }
 };
 
-export default firebase
+// initalize firebase storega for file uploads
+export const storage = firebase.storage();
+
+export default firebase;

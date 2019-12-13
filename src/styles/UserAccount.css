@@ -1,5 +1,5 @@
 .user-wrapper {
-  position: fixed;
+  /* position: fixed; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,6 +23,7 @@
 
 .user__details-photo-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 15rem;
@@ -34,6 +35,18 @@
   width: 10rem;
   height: 10rem;
   border-radius: 50%;
+}
+
+.user__details-photo--upload {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.progress-bar {
+  width: 100%;
 }
 
 .user__details-credentials-container {

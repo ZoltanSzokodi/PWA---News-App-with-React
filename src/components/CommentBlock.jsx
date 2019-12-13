@@ -93,24 +93,31 @@ function CommentBlock(props) {
 
   return (
     <React.Fragment>
+
+      {/* ----------------------------- INPUT ----------------------------- */}
       <div className={toggleClassesWdarkMode(darkMode, "comments__input-container")}>
         <h3 className="comment-title">COMMENTS</h3>
         <textarea className={toggleClassesWdarkMode(darkMode, "comment-input-body")} name="comment" wrap="hard" onChange={handleChange} required></textarea>
         <button className="comment-btn" onClick={addComment} disabled={newCommentBody === "" && true}><i className="fas fa-plus"></i></button>
       </div>
 
+      {/* ----------------------------- OUTPUT ----------------------------- */}
       <div className={toggleClassesWdarkMode(darkMode, "comments__output-container")}>
         <ul className="comments-list">
           {comments.map(comment => (
             (comment.article_title === title) &&
             <li className={toggleClassesWdarkMode(darkMode, "comment")} key={uuid()}>
               <div className="comment__credentials">
-                <img className="comment__credentials--img" src={defaultUserImg} alt="photo" />
+
+                {/* user profile picture */}
+                <img className="comment__credentials--img" src={currentUser.photoURL !== null ? currentUser.photoURL : defaultUserImg} alt="photo" />
                 <span className="comment__credentials--name">{comment.user_name}</span>
               </div>
 
+              {/* comment body */}
               <div className={toggleClassesWdarkMode(darkMode, "comment-output-body")}>{comment.comment_body}</div>
 
+              {/* determing whether a user is permitted to delete a comment */}
               {currentUser && (currentUser.uid === comment.user_id) &&
                 <div className="comment__change">
                   <i className="far fa-trash-alt delete" data-id={comment.comment_id} onClick={deleteComment}></i>
