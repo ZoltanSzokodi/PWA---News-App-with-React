@@ -61,10 +61,6 @@ function Sidenav(props) {
         </div>
       </div>
 
-      <div className={toggleClassesWdarkMode(darkMode, "sidenav__menu-name")}>
-        <h3>Categories</h3>
-      </div>
-
       {/* render the category oprions in the navigation */}
       <ul className="sidenav__list">
         {sidenavOptions.map(option => (
