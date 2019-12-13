@@ -1,10 +1,10 @@
 import React from 'react'
 import '../styles/ContentWrap.css'
 
-function ContentWrap(props) {
+function ContentWrap({ children }) {
   return (
     <div className="grid-container">
-      {props.children}
+      {children}
     </div>
   );
 }

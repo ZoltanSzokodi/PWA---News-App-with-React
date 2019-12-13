@@ -1,12 +1,10 @@
 import React, { useContext } from 'react'
+import firebase, { uiConfig } from '../firebase'
 import { withRouter, Redirect } from 'react-router'
 import { Link } from 'react-router-dom'
-// import { config, uiConfig } from '../firebase'
-import firebase, { uiConfig } from '../firebase'
 import { AuthContext } from '../context/AuthContext'
-import '../styles/Login.css'
-
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth'
+import '../styles/Login.css'
 
 function Login() {
   const { currentUser } = useContext(AuthContext);

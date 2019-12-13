@@ -129,11 +129,6 @@
 }
 
 @media only screen and (min-width: 50rem) {
-  .comments__input-container,
-  .comments__output-container {
-    /* padding: 2rem; */
-  }
-
   .comment__credentials {
     display: flex;
     flex-direction: row;

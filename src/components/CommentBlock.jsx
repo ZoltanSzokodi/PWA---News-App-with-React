@@ -34,23 +34,6 @@ function CommentBlock(props) {
     return;
   };
 
-  console.log(currentUser)
-
-  // db.collection("comments").onSnapshot(snapshot => {
-  //   let changes = snapshot.docChanges();
-  //   let commentsArray = [...comments]
-  //   changes.forEach(change => {
-  //     // console.log(change.doc.data(), change.doc.id)
-  //     if (change.type === "added") {
-  //       commentsArray.push({ ...change.doc.data() })
-  //       setComments(commentsArray)
-  //     } else if (change.type === "removed") {
-  //       commentsArray.filter(doc => doc.id !== change.doc.id)
-  //       setComments(commentsArray)
-  //     }
-  //   })
-  // })
-
   useEffect(() => {
     fetchComments()
   }, [])
@@ -64,7 +47,8 @@ function CommentBlock(props) {
       article_title: title,
       comment_body: newCommentBody,
       user_id: currentUser.uid,
-      user_name: currentUser.displayName
+      user_name: currentUser.displayName,
+      user_image: currentUser.photoURL
     }
 
     db.collection("comments").add(comment)
@@ -74,7 +58,7 @@ function CommentBlock(props) {
     fetchComments()
     commentArea.value = ""
     setNewCommentBody("")
-  }
+  };
 
   // deleting a comment
   const deleteComment = e => {
@@ -82,14 +66,12 @@ function CommentBlock(props) {
     // console.log(id)
     db.collection("comments").doc(id).delete()
     fetchComments()
-  }
+  };
 
   // listenig to textarea changes
   const handleChange = e => {
     setNewCommentBody(e.target.value)
-  }
-
-  // console.log(comments)
+  };
 
   return (
     <React.Fragment>
@@ -110,7 +92,7 @@ function CommentBlock(props) {
               <div className="comment__credentials">
 
                 {/* user profile picture */}
-                <img className="comment__credentials--img" src={currentUser.photoURL !== null ? currentUser.photoURL : defaultUserImg} alt="photo" />
+                <img className="comment__credentials--img" src={currentUser && comment.user_image !== null ? comment.user_image : defaultUserImg} alt="photo" />
                 <span className="comment__credentials--name">{comment.user_name}</span>
               </div>
 

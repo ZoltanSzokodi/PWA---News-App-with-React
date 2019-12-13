@@ -43,6 +43,7 @@
   background-repeat: no-repeat;
   background-size: 2.5rem;
   background-position: 0.8rem;
+  cursor: pointer;
 }
 
 .search-input--dark {

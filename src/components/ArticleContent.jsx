@@ -172,10 +172,7 @@ function ArticleContent(props) {
         Thank God Almighty, we are free at last!
       </p>
 
-      {/* <button onClick={props.handleGoBack}>Go Back</button> */}
-
       <CommentBlock selectedArticle={props.selectedArticle} />
-
     </div>
   );
 }

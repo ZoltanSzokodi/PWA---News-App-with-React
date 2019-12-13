@@ -1,3 +1,5 @@
+import React from 'react'
+import Notify from '../components/Notify'
 import de from '../img/de.svg'
 import fr from '../img/fr.svg'
 import gb from '../img/gb.svg'
@@ -16,9 +18,6 @@ import cz from '../img/cz.svg'
 import gr from '../img/gr.svg'
 import hk from '../img/hk.svg'
 import ind from '../img/in.svg'
-
-import React from 'react'
-import Notify from '../components/Notify'
 
 // array for the country select
 export const flagsArr = [

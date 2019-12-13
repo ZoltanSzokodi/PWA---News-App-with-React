@@ -4,7 +4,6 @@ import { ThemeContext } from '../context/ThemeContext'
 import '../styles/Header.css'
 
 function Header({ handleSearch }) {
-  // const { currentUser } = useContext(AuthContext);
   const { darkMode } = useContext(ThemeContext);
 
   const scrollTop = () => {

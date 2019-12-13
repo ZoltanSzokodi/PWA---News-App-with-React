@@ -167,10 +167,6 @@ input:checked + .slider {
   background-color: var(--light-yellow);
 }
 
-input:focus + .slider {
-  /* box-shadow: 0 0 1px var(--gray-9); */
-}
-
 input:checked + .slider:before {
   -webkit-transform: translateX(3.5rem);
   -ms-transform: translateX(3.5rem);

@@ -141,16 +141,7 @@ function UserAccount() {
     });
   };
 
-  // const updatePassword = () => {
-  //   currentUser.updatePassword("654321").then(function () {
-  //     console.log("PASSWORD update SUCCESS")
-  //     signOut()
-  //   }).catch(function (error) {
-  //     console.log("PASSWORD update FAILED", error)
-  //   });
-  // }  
 
-  console.log(currentUser)
 
   return (
     <div className="user-wrapper">
@@ -158,7 +149,6 @@ function UserAccount() {
       {currentUser === null ? <Loader /> :
 
         <div className="user__details">
-
           {/* if a user with different providerId than pw opens "/account" manually, redirect to "/" */}
           {currentUser.providerData[0].providerId !== "password" && <Redirect to="/" />}
 
@@ -196,7 +186,6 @@ function UserAccount() {
             </div>
             <Link className="go-back" to="/"><i className="fas fa-angle-left" /> Go back</Link>
           </div>
-
         </div>}
     </div>
   );

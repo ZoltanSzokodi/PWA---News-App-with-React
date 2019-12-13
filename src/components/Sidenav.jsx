@@ -24,7 +24,6 @@ function Sidenav(props) {
     <aside className={toggleClassesActiveAndDarkMode(menuState, darkMode)}>
 
       <div className="sidenav__account-container">
-
         <div className={toggleClassesWdarkMode(darkMode, "sidenav__account")}>
           <img className={toggleClassesWdarkMode(darkMode, "sidenav__account-user-picture")} src={currentUser && currentUser.photoURL !== null ? currentUser.photoURL : defaultUserImg} alt="user" />
           <span className="sidenav__account-user-name">{currentUser ? " | " + currentUser.displayName : " | signed out"}</span>
@@ -45,11 +44,9 @@ function Sidenav(props) {
 
         {/* depending on the current user's provider id display "account" or don't */}
         <Link className={toggleClassesWdarkMode(darkMode, "sidenav__login-btn")} style={currentUser && currentUser.providerData[0].providerId === "password" ? { display: "flex" } : { display: "none" }} to="/account">account</Link>
-
       </div>
 
       <div className="sidenav__options-container">
-
         <div className={toggleClassesWdarkMode(darkMode, "sidenav__switch")}>
           <i className="fas fa-sun sun-icon"></i>
           <label className="switch">
@@ -60,7 +57,6 @@ function Sidenav(props) {
         </div>
 
         <div className={toggleClassesWdarkMode(darkMode, "sidenav__nav-selected-country")}>
-          {/* <span className={toggleClassesWdarkMode(darkMode, "sidenav__nav-selected-country-name")}>{selectedCountry.country}</span> */}
           <img className={toggleClassesWdarkMode(darkMode, "sidenav__nav-selected-country-flag")} src={selectedCountry.src} alt={selectedCountry.country} />
         </div>
       </div>
