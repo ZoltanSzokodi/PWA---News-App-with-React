@@ -8,8 +8,7 @@
   cursor: pointer;
   box-sizing: border-box;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  margin: 2rem 2rem 2rem 0;
-  z-index: 2000;
+  margin: 0rem;
 }
 
 .article:hover {
@@ -38,4 +37,10 @@
 
 .article-h3 {
   font-size: 1.6rem;
+}
+
+@media only screen and (min-width: 1050px) {
+  .article {
+    margin: 2rem;
+  }
 }
