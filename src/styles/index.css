@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: var(--light-4);
+  background-color: var(--white);
 }
 
 html {
@@ -41,5 +41,5 @@ html {
   --light-blue: #516b8c;
   --light-yellow: #f2ede4;
   --success: rgb(107, 194, 130);
-  --fail: rgb(255, 70, 0);
+  --fail: #ff6347;
 }

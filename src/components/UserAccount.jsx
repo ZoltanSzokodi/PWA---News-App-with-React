@@ -1,8 +1,8 @@
 import React, { useState, useContext } from 'react'
-import { AuthContext } from '../context/AuthContext'
 import { Link, Redirect } from 'react-router-dom'
 import firebase, { storage } from '../firebase'
 import { toggleNotification } from '../functions/helpers'
+import { AuthContext } from '../context/AuthContext'
 import defaultUserImg from '../img/default-profile-picture.jpg'
 import Loader from './Loader'
 import '../styles/UserAccount.css'
@@ -34,6 +34,7 @@ function UserAccount() {
     setUserEmail(e.target.value)
   };
 
+  // select the image file
   const handleImageChange = e => {
     if (e.target.files[0]) {
       const image = e.target.files[0];
@@ -41,6 +42,7 @@ function UserAccount() {
     }
   };
 
+  // upload the selected image
   const handleImageUpload = () => {
     if (userImage === null) {
       setSatus("fail")
@@ -50,7 +52,7 @@ function UserAccount() {
       const uploadTask = storage.ref(`images/${userImage.name}`).put(userImage);
       uploadTask.on("state_changed",
         snapshot => {
-          // progress func...
+          // progress bar controll
           const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
           setProgressBar(progress)
           setUploadInProgress(true)
@@ -76,7 +78,6 @@ function UserAccount() {
   };
 
   // ------------------------- SUBMIT NEW CREDENTIALS ------------------
-
   const updateName = () => {
     if (userName.length < 5) {
       setSatus("fail")
@@ -108,7 +109,7 @@ function UserAccount() {
     }).catch(error => {
       console.log("EMAIL update FAIL", error)
       setSatus("fail")
-      setMessage(error.message)
+      setMessage("Denied! Log in again before retrying this request.")
       resetNotification()
     });
   };
@@ -134,6 +135,9 @@ function UserAccount() {
       console.log("user deleted")
     }).catch(error => {
       console.log("something went wrong", error)
+      setSatus("fail")
+      setMessage("Denied! Log in again before retrying this request.")
+      resetNotification()
     });
   };
 
@@ -160,14 +164,15 @@ function UserAccount() {
 
           <div className="user__details-photo-container">
             <img className="user__details-photo" src={currentUser.photoURL !== null ? currentUser.photoURL : defaultUserImg} alt="user" />
+
             <div className="user__details-photo--upload">
+              <button className="upload-photo" onClick={handleImageUpload}><i class="fas fa-cloud-upload-alt"></i> upload</button>
               <input className="choose-photo" type="file" onChange={handleImageChange} />
-              <button className="upload-photo" onClick={handleImageUpload}>upload</button>
               <progress className="progress-bar" style={uploadInProgress ? { display: "block" } : { display: "none" }} value={progressBar} max="100" />
             </div>
           </div>
 
-          {/* <Notify status={"success"} message={"yuppyy"}></Notify> */}
+          {/* popup feedback for profile updates */}
           {toggleNotification(status, message)}
 
           <div className="user__details-credentials-container">

@@ -8,7 +8,7 @@
   height: 7rem;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--light-4);
+  background-color: var(--white);
   transition: 0.8s;
   z-index: 200;
 }
@@ -34,10 +34,15 @@
   border: none;
   border-radius: 50rem;
   height: 4rem;
-  width: 20rem;
-  padding-left: 1rem;
+  width: 4rem;
+  padding-left: 4rem;
   margin-left: 1rem;
   transition: 0.3s;
+  background-color: var(--light-4);
+  background-image: url("../img/search.png");
+  background-repeat: no-repeat;
+  background-size: 2.5rem;
+  background-position: 0.8rem;
 }
 
 .search-input--dark {
@@ -47,6 +52,7 @@
 
 .search-input:focus {
   outline: none;
+  width: 13rem;
 }
 
 .up-arrow,

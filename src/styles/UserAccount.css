@@ -24,9 +24,9 @@
 .user__details-photo-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
-  height: 15rem;
+  height: 20rem;
   width: 100%;
   background-color: var(--light-5);
 }
@@ -45,8 +45,27 @@
   width: 100%;
 }
 
+.choose-photo {
+  background-color: var(--light-4);
+}
+
 .progress-bar {
   width: 100%;
+}
+
+.upload-photo {
+  margin-bottom: 1rem;
+  border-radius: 50rem;
+  border: none;
+  background-color: var(--fail);
+  padding: 1rem;
+  color: var(--white);
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.upload-photo:focus {
+  outline: none;
 }
 
 .user__details-credentials-container {
@@ -83,7 +102,7 @@
 .submit-btn {
   border: none;
   padding: 1rem;
-  background-color: #ff6347;
+  background-color: var(--fail);
   min-width: 7.2rem;
   text-align: center;
   text-decoration: none;

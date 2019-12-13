@@ -28,19 +28,6 @@
   column-gap: 2rem;
 }
 
-/* Force varying heights to simulate dynamic content */
-/* .card:first-child {
-  height: 485px;
-}
-
-.card:nth-child(2) {
-  height: 200px;
-}
-
-.card:nth-child(3) {
-  height: 265px;
-} */
-
 /* Medium screens breakpoint (1050px) */
 @media only screen and (min-width: 65.625em) {
   /* Break out main cards into two columns */

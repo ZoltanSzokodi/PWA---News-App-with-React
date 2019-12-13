@@ -5,6 +5,7 @@
   transition: 0.6s;
   font-size: 1.6rem;
   color: var(--white);
+  text-align: center;
 }
 
 .hide {
